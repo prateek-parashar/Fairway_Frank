@@ -43,15 +43,15 @@ public class RandomWorldDemo {
             default: return Tileset.NOTHING;
         }
     }
-
-    public static void drawUpper(TETile[][] world, Position p, int size, TETile t) {
+    // Draws the top portion of the hexagon
+    private static void drawUpper(TETile[][] world, Position p, int size, TETile t) {
         int rowLength = size;
         int originalPosition = p.pX;
 
         while (size > 0) {
             p.pX = originalPosition + size - 1;
             for (int i = p.pX; i < p.pX + rowLength; i++) {
-                world[i][p.pY] = t;
+                world[i][p.pY] = TETile.colorVariant(t, 32, 32, 32, RANDOM);
             }
 
             p.pY -= 1;
@@ -59,12 +59,33 @@ public class RandomWorldDemo {
             size -= 1;
         }
         p.pX = originalPosition;
-        p.pY -= 1;
+    }
+
+    // Draws the lower half of the hexagon
+    private static void drawLower(TETile[][] world, Position p, int size, TETile t) {
+        int rowLength = size + (size - 1) * 2;
+        while (size > 0) {
+            try {
+                for (int i = p.pX; i < p.pX + rowLength; i++) {
+                    world[i][p.pY] = TETile.colorVariant(t, 32, 32, 32, RANDOM);
+                }
+            } catch (Exception e) {
+                // handle exception
+                throw new IllegalArgumentException("Get out of here");
+            }
+            size--;
+            rowLength -= 2;
+            p.pX += 1;
+            p.pY -= 1;
+        }
     }
 
     public static void addHexagon(TETile[][] world, Position p, int size, TETile t) {
+        if (size < 2) {
+            throw new IllegalArgumentException("Hexagon must be at least size 2.");
+        }
         drawUpper(world, p, size, t);
-        //drawLower(world, p, size, t);
+        drawLower(world, p, size, t);
     }
 
     public static void main(String[] args) {
@@ -74,7 +95,7 @@ public class RandomWorldDemo {
         TETile[][] randomTiles = new TETile[WIDTH][HEIGHT];
         fillWithRandomTiles(randomTiles);
 
-        Position p = new Position(10, 10);
+        Position p = new Position(20, 20);
         TETile t = Tileset.WATER;
         addHexagon(randomTiles, p, 4, t);
         ter.renderFrame(randomTiles);
