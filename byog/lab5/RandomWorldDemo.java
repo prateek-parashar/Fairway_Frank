@@ -44,6 +44,57 @@ public class RandomWorldDemo {
         }
     }
 
+    public static void drawUpper(TETile[][] world, Position p, int size, TETile t) {
+        int rowLength = size;
+        int baseX = p.px;
+        int baseY = p.py;
+        while (size > 0) {
+            int i = size - 1;
+            while (i > 0) {
+                world[p.px][p.py] = Tileset.NOTHING;
+                p.px++;
+                i--;
+            }
+            int j = 0;
+            while (j < rowLength) {
+                world[p.px][p.py] = Tileset.WATER;
+                j++;
+                p.px++;
+            }
+            p.py += 1;
+            rowLength += 2;
+            size -= 1;
+        }
+    }
+
+    public static void drawLower (TETile[][] world, Position p, int size, TETile t) {
+        int rowLength = size + (size - 1) * 2;
+        int rowCount = size;
+        while (size > 0) {
+            int i = size;
+            while (i < rowCount) {
+                world[p.px][p.py] = Tileset.NOTHING;
+                p.px++;
+                i++;
+            }
+            int j = 0;
+            while (j < rowLength) {
+                world[p.px][p.py] = Tileset.WATER;
+                j++;
+                p.px++;
+            }
+            p.py += 1;
+            rowLength -= 2;
+            size -= 1;
+        }
+    }
+
+
+    public static void addHexagon(TETile[][] world, Position p, int size, TETile t) {
+        drawUpper(world, p, size, t);
+        drawLower(world, p, size, t);
+    }
+
     public static void main(String[] args) {
         TERenderer ter = new TERenderer();
         ter.initialize(WIDTH, HEIGHT);
@@ -51,6 +102,9 @@ public class RandomWorldDemo {
         TETile[][] randomTiles = new TETile[WIDTH][HEIGHT];
         fillWithRandomTiles(randomTiles);
 
+        Position p = new Position(10, 10);
+        TETile t = Tileset.WATER;
+        addHexagon(randomTiles, p, 4, t);
         ter.renderFrame(randomTiles);
     }
 
