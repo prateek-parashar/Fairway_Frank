@@ -1,11 +1,11 @@
 package byog.lab5;
 
 public class Position {
-    int px;
-    int py;
+    int pX;
+    int pY;
 
     public Position(int px, int py) {
-        this.px = px;
-        this.py = py;
+        this.pX = px;
+        this.pY = py;
     }
 }

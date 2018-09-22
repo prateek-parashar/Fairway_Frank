@@ -46,53 +46,25 @@ public class RandomWorldDemo {
 
     public static void drawUpper(TETile[][] world, Position p, int size, TETile t) {
         int rowLength = size;
-        int baseX = p.px;
-        int baseY = p.py;
+        int originalPosition = p.pX;
+
         while (size > 0) {
-            int i = size - 1;
-            while (i > 0) {
-                world[p.px][p.py] = Tileset.NOTHING;
-                p.px++;
-                i--;
+            p.pX = originalPosition + size - 1;
+            for (int i = p.pX; i < p.pX + rowLength; i++) {
+                world[i][p.pY] = t;
             }
-            int j = 0;
-            while (j < rowLength) {
-                world[p.px][p.py] = Tileset.WATER;
-                j++;
-                p.px++;
-            }
-            p.py += 1;
+
+            p.pY -= 1;
             rowLength += 2;
             size -= 1;
         }
+        p.pX = originalPosition;
+        p.pY -= 1;
     }
-
-    public static void drawLower (TETile[][] world, Position p, int size, TETile t) {
-        int rowLength = size + (size - 1) * 2;
-        int rowCount = size;
-        while (size > 0) {
-            int i = size;
-            while (i < rowCount) {
-                world[p.px][p.py] = Tileset.NOTHING;
-                p.px++;
-                i++;
-            }
-            int j = 0;
-            while (j < rowLength) {
-                world[p.px][p.py] = Tileset.WATER;
-                j++;
-                p.px++;
-            }
-            p.py += 1;
-            rowLength -= 2;
-            size -= 1;
-        }
-    }
-
 
     public static void addHexagon(TETile[][] world, Position p, int size, TETile t) {
         drawUpper(world, p, size, t);
-        drawLower(world, p, size, t);
+        //drawLower(world, p, size, t);
     }
 
     public static void main(String[] args) {
