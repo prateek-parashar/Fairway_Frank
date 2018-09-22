@@ -30,6 +30,12 @@ public class BoringWorldDemo {
                 world[x][y] = Tileset.WALL;
             }
         }
+        // makes the base full of water
+        for (int x = 0; x < 60; x++) {
+            for (int y = 0; y < 5; y++) {
+                world[x][y] = Tileset.WATER;
+            }
+        }
 
         // draws the world to the screen
         ter.renderFrame(world);
