@@ -64,10 +64,12 @@ public class RandomWorldDemo {
     // Draws the lower half of the hexagon
     private static void drawLower(TETile[][] world, Position p, int size, TETile t) {
         int rowLength = size + (size - 1) * 2;
+        int originalPosition = p.pX;
+
         while (size > 0) {
             try {
                 for (int i = p.pX; i < p.pX + rowLength; i++) {
-                    world[i][p.pY] = TETile.colorVariant(t, 32, 32, 32, RANDOM);
+                    world[i][p.pY] = TETile.colorVariant(t, 39, 32, 52, RANDOM);
                 }
             } catch (Exception e) {
                 // handle exception
@@ -78,6 +80,7 @@ public class RandomWorldDemo {
             p.pX += 1;
             p.pY -= 1;
         }
+        p.pX = originalPosition;
     }
 
     public static void addHexagon(TETile[][] world, Position p, int size, TETile t) {
@@ -88,6 +91,29 @@ public class RandomWorldDemo {
         drawLower(world, p, size, t);
     }
 
+    /** Method to draw vertical hexagons */
+    private static void drawVerticalHexagons(TETile[][] world, Position p, int size, int length, TETile t) {
+        int originalX = p.pX;
+        int originalY = p.pY;
+        while (length > 0) {
+            addHexagon(world, p, size, t);
+            length--;
+        }
+        p.pX = originalX;
+        p.pY = originalY;
+    }
+
+    private static void updatePosition(Position p, int size, char side) {
+        switch (side) {
+            case 'L': p.pX = p.pX - (size + 2);
+                      p.pY = p.pY - size;
+                      break;
+            case 'R': p.pX = p.pX + size + (size - 1) * 2 - 2;
+                      p.pY = p.pY - size;
+                      break;
+        }
+    }
+
     public static void main(String[] args) {
         TERenderer ter = new TERenderer();
         ter.initialize(WIDTH, HEIGHT);
@@ -95,11 +121,21 @@ public class RandomWorldDemo {
         TETile[][] randomTiles = new TETile[WIDTH][HEIGHT];
         fillWithRandomTiles(randomTiles);
 
-        Position p = new Position(20, 20);
-        TETile t = Tileset.WATER;
-        addHexagon(randomTiles, p, 4, t);
+        Position p = new Position(20, 40);
+        TETile t = Tileset.TREE;
+        drawVerticalHexagons(randomTiles, p, 3, 5, t);
+        updatePosition(p, 3, 'L');
+        drawVerticalHexagons(randomTiles, p, 3, 4, t);
+        updatePosition(p, 3, 'L');
+        drawVerticalHexagons(randomTiles, p, 3, 3, t);
+
+        p.pX = 20;
+        p.pY = 40;
+        updatePosition(p, 3, 'R');
+        drawVerticalHexagons(randomTiles, p, 3, 4, t);
+        updatePosition(p, 3, 'R');
+        drawVerticalHexagons(randomTiles, p, 3, 3, t);
+
         ter.renderFrame(randomTiles);
     }
-
-
 }
