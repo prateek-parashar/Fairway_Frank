@@ -2,7 +2,6 @@ package byog.Core;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import static byog.Core.Parameters.getBaseParameters;
 
@@ -115,7 +114,6 @@ public class Room {
             }
         }
     }
-
 
 }
 

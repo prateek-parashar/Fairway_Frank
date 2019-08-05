@@ -1,5 +1,8 @@
 package byog.Core;
 
+import static byog.Core.Parameters.getBaseParameters;
+
+
 public class BSPTree {
     private Room root;
     private BSPTree leftChild = null;
@@ -41,6 +44,16 @@ public class BSPTree {
 
     public void setRightChild(BSPTree rightChild) {
         this.rightChild = rightChild;
+    }
+
+    /** Randomly splits the baseNode vertically or horizontally */
+    public void randomSplit() {
+            int toss = getBaseParameters().randomGenerator.nextInt(1);
+            if (toss == 0) {
+                this.root.horizontalSplit();
+            } else {
+                this.root.verticalSplit();
+            }
     }
 
 }
