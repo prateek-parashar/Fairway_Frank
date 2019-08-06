@@ -48,4 +48,8 @@ public class Parameters {
     public TETile getPlayer() {
         return player;
     }
+
+    public void setSEED(long value) {
+        baseParameters.SEED = value;
+    }
 }

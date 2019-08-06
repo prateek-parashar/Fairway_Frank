@@ -1,7 +1,7 @@
 package byog.Core;
 
-import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 
 import static byog.Core.Parameters.getBaseParameters;
 
@@ -49,8 +49,8 @@ public class BSPTree {
         this.rightChild = rightChild;
     }
 
-    /** Randomly splits the baseNode vertically or horizontally */
-    public void randomSplitandGrow() {
+    /** Randomly splits the baseNode vertically or horizontally and grow the tree with the resulting rooms */
+    public void randomSplitAndGrow() {
             int toss = getBaseParameters().randomGenerator.nextInt(1);
             if (toss == 0) {
                 Room[] newRooms = this.root.horizontalSplit();
@@ -62,5 +62,28 @@ public class BSPTree {
                 this.rightChild.root = newRooms[1];
             }
     }
+
+    /** Does a pre - order traversal of the tree and creates partitions along the way */
+    public void createPartitions(int iterations) {
+        while (iterations > 0) {
+            this.randomSplitAndGrow();
+            this.leftChild.createPartitions(iterations - 1);
+            this.rightChild.createPartitions(iterations - 1);
+        }
+    }
+
+    /** Checks to see if the Binary tree is a leaf with no nodes */
+    public boolean isNull() {
+        return ((this.leftChild == null) && (this.rightChild == null));
+    }
+
+   public void drawPartitions() {
+        if (this.isNull()) {
+            this.root.drawRoom();
+        } else {
+            this.leftChild.drawPartitions();
+            this.rightChild.drawPartitions();
+        }
+   }
 
 }
