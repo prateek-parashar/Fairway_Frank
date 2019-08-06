@@ -78,6 +78,8 @@ public class Room {
         if((room1.roomRatio() > 0.45) &&  (room2.roomRatio() > 0.45)) {
             returnList[0] = room1;
             returnList[1] = room2;
+
+            return returnList;
         }
         return this.verticalSplit();
     }
@@ -88,7 +90,7 @@ public class Room {
     public Room[] horizontalSplit() {
         Room[] returnList = new Room[1];
         Room baseRoom = this;
-        int breakPoint = getBaseParameters().randomGenerator.nextInt(baseRoom.getWidth());
+        int breakPoint = getBaseParameters().randomGenerator.nextInt(baseRoom.getHeight());
 
         Point leftCorner1 = baseRoom.getLeftCorner();
         Point leftCorner2 = new Point(baseRoom.getLeftCorner().getX(), baseRoom.getLeftCorner().getY() + breakPoint);
@@ -102,6 +104,8 @@ public class Room {
         if((room1.roomRatio() > 0.45) &&  (room2.roomRatio() > 0.45)) {
             returnList[0] = room1;
             returnList[1] = room2;
+
+            return returnList;
         }
         return this.horizontalSplit();
     }
