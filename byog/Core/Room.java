@@ -61,8 +61,8 @@ public class Room {
     /** Splits the given room vertically with a random chosen point in the x axis
      * @return - list of the 2 new Room objects
      */
-    public List<Room> verticalSplit() {
-        ArrayList<Room> returnList = new ArrayList<>();
+    public Room[] verticalSplit() {
+        Room[] returnList = new Room[1];
         Room baseRoom = this;
         int breakPoint = getBaseParameters().randomGenerator.nextInt(baseRoom.getWidth());
 
@@ -76,8 +76,8 @@ public class Room {
         Room room2 = new Room(baseRoom.getHeight(), width2, leftCorner2);
 
         if((room1.roomRatio() > 0.45) &&  (room2.roomRatio() > 0.45)) {
-            returnList.add(room1);
-            returnList.add(room2);
+            returnList[0] = room1;
+            returnList[1] = room2;
         }
         return this.verticalSplit();
     }
@@ -85,8 +85,8 @@ public class Room {
     /** Splits the given room horizontally with a random chosen point in the y axis
      * @return - list of the 2 new Room objects
      */
-    public List<Room> horizontalSplit() {
-        ArrayList<Room> returnList = new ArrayList<>();
+    public Room[] horizontalSplit() {
+        Room[] returnList = new Room[1];
         Room baseRoom = this;
         int breakPoint = getBaseParameters().randomGenerator.nextInt(baseRoom.getWidth());
 
@@ -100,8 +100,8 @@ public class Room {
         Room room2 = new Room(height2, baseRoom.getWidth(), leftCorner2);
 
         if((room1.roomRatio() > 0.45) &&  (room2.roomRatio() > 0.45)) {
-            returnList.add(room1);
-            returnList.add(room2);
+            returnList[0] = room1;
+            returnList[1] = room2;
         }
         return this.horizontalSplit();
     }

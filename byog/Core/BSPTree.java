@@ -1,5 +1,8 @@
 package byog.Core;
 
+import java.awt.*;
+import java.util.ArrayList;
+
 import static byog.Core.Parameters.getBaseParameters;
 
 
@@ -47,12 +50,16 @@ public class BSPTree {
     }
 
     /** Randomly splits the baseNode vertically or horizontally */
-    public void randomSplit() {
+    public void randomSplitandGrow() {
             int toss = getBaseParameters().randomGenerator.nextInt(1);
             if (toss == 0) {
-                this.root.horizontalSplit();
+                Room[] newRooms = this.root.horizontalSplit();
+                this.leftChild.root = newRooms[0];
+                this.rightChild.root = newRooms[1];
             } else {
-                this.root.verticalSplit();
+                Room[] newRooms =  this.root.verticalSplit();
+                this.leftChild.root = newRooms[0];
+                this.rightChild.root = newRooms[1];
             }
     }
 
