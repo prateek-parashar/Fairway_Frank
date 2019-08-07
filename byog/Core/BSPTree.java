@@ -21,12 +21,12 @@ public class BSPTree {
         this.leftChild = leftChild;
         this.rightChild = rightChild;
     }
-    public void addLeftChild(Room r) {
-        this.leftChild = new BSPTree(r);
+    public void addLeftChild(BSPTree bspTree) {
+        this.setLeftChild(bspTree);
     }
 
-    public void addRightChild(Room r) {
-        this.rightChild = new BSPTree(r);
+    public void addRightChild(BSPTree bspTree) {
+        this.setRightChild(bspTree);
     }
 
     public Room getRoot() {
@@ -54,16 +54,14 @@ public class BSPTree {
     }
 
     /** Randomly splits the baseNode vertically or horizontally and grow the tree with the resulting rooms */
-    public void randomSplitAndGrow(int toss) {
-//            int toss = getBaseParameters().randomGenerator.nextInt(1);
+    public Room[] randomSplitAndGrow(int toss) {
             if (toss == 0) {
                 Room[] newRooms = this.root.horizontalSplit();
-                this.addLeftChild(newRooms[0]);
-                this.addRightChild(newRooms[1]);
+                return newRooms;
+
             } else {
                 Room[] newRooms =  this.root.verticalSplit();
-                this.addLeftChild(newRooms[0]);
-                this.addRightChild(newRooms[1]);
+                return newRooms;
             }
     }
 
@@ -89,6 +87,18 @@ public class BSPTree {
             this.leftChild.drawPartitions();
             this.rightChild.drawPartitions();
         }
+   }
+
+   /** Function to print all the tree leaves */
+   public void printPartitions() {
+       if (this.isNull()) {
+           System.out.println(this.root.getLeftCorner());
+           System.out.println(this.root.getHeight());
+           System.out.println(this.root.getWidth());
+       } else {
+           this.leftChild.printPartitions();
+           this.rightChild.printPartitions();
+       }
    }
 
 }

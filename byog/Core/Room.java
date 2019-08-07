@@ -78,7 +78,7 @@ public class Room {
         Room room1 = new Room(baseRoom.getHeight(), width1, leftCorner1);
         Room room2 = new Room(baseRoom.getHeight(), width2, leftCorner2);
 
-        if((room1.roomRatioVertical() > 0.45) &&  (room2.roomRatioVertical() > 0.45)) {
+        if((room1.roomRatioVertical() > 0.30) &&  (room2.roomRatioVertical() > 0.30)) {
             returnList[0] = room1;
             returnList[1] = room2;
 
