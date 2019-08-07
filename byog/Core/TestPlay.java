@@ -11,7 +11,7 @@ public class TestPlay {
         gameTree.createPartitions(3);
         gameTree.drawPartitions();
 
-        getBaseParameters().tileRenderer.initialize(80, 40);
+        getBaseParameters().tileRenderer.initialize(50, 50);
         getBaseParameters().tileRenderer.renderFrame(getBaseParameters().world);
 
     }

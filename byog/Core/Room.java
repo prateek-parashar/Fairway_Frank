@@ -1,8 +1,5 @@
 package byog.Core;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static byog.Core.Parameters.getBaseParameters;
 
 public class Room {
@@ -54,15 +51,21 @@ public class Room {
     }
 
     /** Returns the ratio of the height and width of the room */
-    public double roomRatio() {
-        return this.getHeight() / this.getWidth();
+    public double roomRatioHorizontal() {
+        double x = (double)this.getHeight() / this.getWidth();
+        return x;
+    }
+
+    public double roomRatioVertical() {
+        double x = (double)this.getWidth() / this.getHeight();
+        return x;
     }
 
     /** Splits the given room vertically with a random chosen point in the x axis
      * @return - list of the 2 new Room objects
      */
     public Room[] verticalSplit() {
-        Room[] returnList = new Room[1];
+        Room[] returnList = new Room[2];
         Room baseRoom = this;
         int breakPoint = getBaseParameters().randomGenerator.nextInt(baseRoom.getWidth());
 
@@ -75,20 +78,21 @@ public class Room {
         Room room1 = new Room(baseRoom.getHeight(), width1, leftCorner1);
         Room room2 = new Room(baseRoom.getHeight(), width2, leftCorner2);
 
-        if((room1.roomRatio() > 0.45) &&  (room2.roomRatio() > 0.45)) {
+        if((room1.roomRatioVertical() > 0.45) &&  (room2.roomRatioVertical() > 0.45)) {
             returnList[0] = room1;
             returnList[1] = room2;
 
             return returnList;
+        } else {
+            return this.verticalSplit();
         }
-        return this.verticalSplit();
     }
 
     /** Splits the given room horizontally with a random chosen point in the y axis
      * @return - list of the 2 new Room objects
      */
     public Room[] horizontalSplit() {
-        Room[] returnList = new Room[1];
+        Room[] returnList = new Room[2];
         Room baseRoom = this;
         int breakPoint = getBaseParameters().randomGenerator.nextInt(baseRoom.getHeight());
 
@@ -101,13 +105,14 @@ public class Room {
         Room room1 = new Room(height1, baseRoom.getWidth(), leftCorner1);
         Room room2 = new Room(height2, baseRoom.getWidth(), leftCorner2);
 
-        if((room1.roomRatio() > 0.45) &&  (room2.roomRatio() > 0.45)) {
+        if((room1.roomRatioHorizontal() > 0.30) &&  (room2.roomRatioHorizontal() > 0.30)) {
             returnList[0] = room1;
             returnList[1] = room2;
 
             return returnList;
+        } else {
+            return this.horizontalSplit();
         }
-        return this.horizontalSplit();
     }
 
     /** Used to draw the current room with a Floor tile */

@@ -1,8 +1,5 @@
 package byog.Core;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static byog.Core.Parameters.getBaseParameters;
 
 
@@ -23,6 +20,13 @@ public class BSPTree {
         this.root = root;
         this.leftChild = leftChild;
         this.rightChild = rightChild;
+    }
+    public void addLeftChild(Room r) {
+        this.leftChild = new BSPTree(r);
+    }
+
+    public void addRightChild(Room r) {
+        this.rightChild = new BSPTree(r);
     }
 
     public Room getRoot() {
@@ -50,23 +54,23 @@ public class BSPTree {
     }
 
     /** Randomly splits the baseNode vertically or horizontally and grow the tree with the resulting rooms */
-    public void randomSplitAndGrow() {
-            int toss = getBaseParameters().randomGenerator.nextInt(1);
+    public void randomSplitAndGrow(int toss) {
+//            int toss = getBaseParameters().randomGenerator.nextInt(1);
             if (toss == 0) {
                 Room[] newRooms = this.root.horizontalSplit();
-                this.leftChild.root = newRooms[0];
-                this.rightChild.root = newRooms[1];
+                this.addLeftChild(newRooms[0]);
+                this.addRightChild(newRooms[1]);
             } else {
                 Room[] newRooms =  this.root.verticalSplit();
-                this.leftChild.root = newRooms[0];
-                this.rightChild.root = newRooms[1];
+                this.addLeftChild(newRooms[0]);
+                this.addRightChild(newRooms[1]);
             }
     }
 
     /** Does a pre - order traversal of the tree and creates partitions along the way */
     public void createPartitions(int iterations) {
         while (iterations > 0) {
-            this.randomSplitAndGrow();
+            this.randomSplitAndGrow(iterations % 2);
             this.leftChild.createPartitions(iterations - 1);
             this.rightChild.createPartitions(iterations - 1);
         }
@@ -77,6 +81,7 @@ public class BSPTree {
         return ((this.leftChild == null) && (this.rightChild == null));
     }
 
+    /** Draws all the partitions of the main world / leaves of the tree */
    public void drawPartitions() {
         if (this.isNull()) {
             this.root.drawRoom();

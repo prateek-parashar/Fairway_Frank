@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class Parameters {
     private static final Parameters baseParameters = new Parameters();
-    private Room baseWorld = new Room(40, 80, new Point(0, 0));
+    private Room baseWorld = new Room(50, 50, new Point(0, 0));
     private static long SEED;
     Random randomGenerator = new Random(SEED);
     TERenderer tileRenderer = new TERenderer();
