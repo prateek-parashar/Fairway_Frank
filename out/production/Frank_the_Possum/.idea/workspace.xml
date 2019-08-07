@@ -4,13 +4,11 @@
     <list default="true" id="b4629a22-d0ae-4f73-ba67-d861f0207527" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/byog/Core/BSPTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/BSPTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Parameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Parameters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byog/Core/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/byog/Core/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/byog/Core/TestPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/TestPlay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/BSPTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/BSPTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Parameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Parameters.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Point.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Room.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/TestPlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/TestPlay.class" afterDir="false" />
     </list>
@@ -35,6 +33,11 @@
       <list>
         <option value="Prateek Parashar &lt;36658243+prateek-parashar@users.noreply.github.com&gt;" />
       </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -175,6 +178,7 @@
       <updated>1537531291344</updated>
       <workItem from="1564479399999" duration="57157000" />
       <workItem from="1565114120128" duration="624000" />
+      <workItem from="1565159579170" duration="11854000" />
     </task>
     <task id="LOCAL-00001" summary="added the initial files and libraries">
       <created>1537531445516</created>
@@ -239,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565090281246</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Create new branch">
+      <created>1565187340817</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1565187340817</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,18 +277,19 @@
     <MESSAGE value="Create a singleton class with shared variables.&#10;Add a method to draw the room." />
     <MESSAGE value="Create a method to grow the tree" />
     <MESSAGE value="Class to test the generation of rooms visually" />
-    <option name="LAST_COMMIT_MESSAGE" value="Class to test the generation of rooms visually" />
+    <MESSAGE value="Create new branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create new branch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/byog/Core/BSPTree.java</url>
-          <line>71</line>
-          <properties class="byog.Core.BSPTree" method="createPartitions">
+          <url>file://$PROJECT_DIR$/byog/Core/Room.java</url>
+          <line>66</line>
+          <properties class="byog.Core.Room" method="verticalSplit">
             <option name="EMULATED" value="true" />
           </properties>
-          <option name="timeStamp" value="12" />
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

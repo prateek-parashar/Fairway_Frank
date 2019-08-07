@@ -1,8 +1,5 @@
 package byog.Core;
 
-import static byog.Core.Parameters.getBaseParameters;
-
-
 public class BSPTree {
     private Room root;
     private BSPTree leftChild = null;
