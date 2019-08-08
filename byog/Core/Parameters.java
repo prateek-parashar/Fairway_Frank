@@ -27,54 +27,6 @@ public class Parameters {
     TETile nothing = Tileset.NOTHING;
     TETile water = Tileset.WATER;
 
-    public static Parameters getBaseParameters() {
-        return baseParameters;
-    }
-
-    public Room getBaseWorld() {
-        return baseWorld;
-    }
-
-    public static long getSEED() {
-        return SEED;
-    }
-
-    public TERenderer getTileRenderer() {
-        return tileRenderer;
-    }
-
-    public TETile[][] getWorld() {
-        return world;
-    }
-
-    public TETile getFloor() {
-        return floor;
-    }
-
-    public TETile getWall() {
-        return wall;
-    }
-
-    public TETile getPlayer() {
-        return player;
-    }
-
-    public void setSEED(long value) {
-        baseParameters.SEED = value;
-    }
-
-    public int[][] getNumericWorld() {
-        return numericWorld;
-    }
-
-    public ArrayList<Room> getFinalRooms() {
-        return finalRooms;
-    }
-
-    public void setFinalRooms(ArrayList<Room> finalRooms) {
-        this.finalRooms = finalRooms;
-    }
-
     public void initializeWorld() {
         for (int i = 0; i < getBaseWorld().getWidth() ; i++) {
             for (int j = 0; j < getBaseWorld().getHeight(); j++) {
@@ -102,5 +54,113 @@ public class Parameters {
             }
             System.out.println("");
         }
+    }
+
+    public int getNumberOfPaints() {
+        return numberOfPaints;
+    }
+
+    public void setNumberOfPaints(int numberOfPaints) {
+        this.numberOfPaints = numberOfPaints;
+    }
+
+    public static Parameters getBaseParameters() {
+        return baseParameters;
+    }
+
+    public Room getBaseWorld() {
+        return baseWorld;
+    }
+
+    public void setBaseWorld(Room baseWorld) {
+        this.baseWorld = baseWorld;
+    }
+
+    public static long getSEED() {
+        return SEED;
+    }
+
+    public static void setSEED(long SEED) {
+        Parameters.SEED = SEED;
+    }
+
+    public Random getRandomGenerator() {
+        return randomGenerator;
+    }
+
+    public void setRandomGenerator(Random randomGenerator) {
+        this.randomGenerator = randomGenerator;
+    }
+
+    public TERenderer getTileRenderer() {
+        return tileRenderer;
+    }
+
+    public void setTileRenderer(TERenderer tileRenderer) {
+        this.tileRenderer = tileRenderer;
+    }
+
+    public TETile[][] getWorld() {
+        return world;
+    }
+
+    public void setWorld(TETile[][] world) {
+        this.world = world;
+    }
+
+    public int[][] getNumericWorld() {
+        return numericWorld;
+    }
+
+    public void setNumericWorld(int[][] numericWorld) {
+        this.numericWorld = numericWorld;
+    }
+
+    public ArrayList<Room> getFinalRooms() {
+        return finalRooms;
+    }
+
+    public void setFinalRooms(ArrayList<Room> finalRooms) {
+        this.finalRooms = finalRooms;
+    }
+
+    public TETile getFloor() {
+        return floor;
+    }
+
+    public void setFloor(TETile floor) {
+        this.floor = floor;
+    }
+
+    public TETile getWall() {
+        return wall;
+    }
+
+    public void setWall(TETile wall) {
+        this.wall = wall;
+    }
+
+    public TETile getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(TETile player) {
+        this.player = player;
+    }
+
+    public TETile getNothing() {
+        return nothing;
+    }
+
+    public void setNothing(TETile nothing) {
+        this.nothing = nothing;
+    }
+
+    public TETile getWater() {
+        return water;
+    }
+
+    public void setWater(TETile water) {
+        this.water = water;
     }
 }
