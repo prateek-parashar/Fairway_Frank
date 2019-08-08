@@ -3,8 +3,8 @@ package byog.Core;
 import static byog.Core.Parameters.getBaseParameters;
 
 public class Room {
-    private int height;
     private int width;
+    private int height;
     private Point leftCorner;
     private Point centre = new Point(this.width / 2, this.height / 2);
 
@@ -12,18 +12,10 @@ public class Room {
 
     }
 
-    public Room(int height, int width, Point leftCorner) {
-        this.height = height;
+    public Room(int width, int height, Point leftCorner) {
         this.width = width;
-        this.leftCorner = leftCorner;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
         this.height = height;
+        this.leftCorner = leftCorner;
     }
 
     public int getWidth() {
@@ -32,6 +24,14 @@ public class Room {
 
     public void setWidth(int width) {
         this.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 
     public Point getLeftCorner() {
@@ -75,8 +75,8 @@ public class Room {
         int width1 = leftCorner2.getX() - leftCorner1.getX();
         int width2 = baseRoom.getWidth() - breakPoint;
 
-        Room room1 = new Room(baseRoom.getHeight(), width1, leftCorner1);
-        Room room2 = new Room(baseRoom.getHeight(), width2, leftCorner2);
+        Room room1 = new Room(width1, baseRoom.getHeight(), leftCorner1);
+        Room room2 = new Room(width2, baseRoom.getHeight(), leftCorner2);
 
         if((room1.roomRatioVertical() > 0.30) &&  (room2.roomRatioVertical() > 0.30)) {
             returnList[0] = room1;
@@ -102,8 +102,8 @@ public class Room {
         int height1 = leftCorner2.getY() - leftCorner1.getY();
         int height2 = baseRoom.getHeight() - breakPoint;
 
-        Room room1 = new Room(height1, baseRoom.getWidth(), leftCorner1);
-        Room room2 = new Room(height2, baseRoom.getWidth(), leftCorner2);
+        Room room1 = new Room(baseRoom.getWidth(), height1, leftCorner1);
+        Room room2 = new Room(baseRoom.getWidth(), height2, leftCorner2);
 
         if((room1.roomRatioHorizontal() > 0.30) &&  (room2.roomRatioHorizontal() > 0.30)) {
             returnList[0] = room1;
@@ -117,9 +117,11 @@ public class Room {
 
     /** Used to draw the current room with a Floor tile */
     public void drawRoom() {
-        for (int i = this.getLeftCorner().getX(); i < this.getWidth(); i++) {
-            for (int j = this.getLeftCorner().getY(); j < this.getHeight(); j++) {
-                getBaseParameters().world[i][j] = getBaseParameters().getFloor();
+        for (int i = this.getLeftCorner().getX(); i < this.getWidth() + this.getLeftCorner().getX(); i++) {
+            for (int j = this.getLeftCorner().getY(); j < this.getHeight() + this.getLeftCorner().getY(); j++) {
+                getBaseParameters().getNumericWorld()[i][j] = 1;
+                getBaseParameters().getWorld()[i][j] = getBaseParameters().getFloor();
+                getBaseParameters().numberOfPaints += 1;
             }
         }
     }

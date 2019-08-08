@@ -4,11 +4,11 @@
     <list default="true" id="b4629a22-d0ae-4f73-ba67-d861f0207527" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/byog/Core/BSPTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/BSPTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byog/Core/Parameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Parameters.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/byog/Core/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/byog/Core/TestPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/TestPlay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/BSPTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/BSPTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Parameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Parameters.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Room.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/TestPlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/TestPlay.class" afterDir="false" />
     </list>
@@ -179,6 +179,8 @@
       <workItem from="1564479399999" duration="57157000" />
       <workItem from="1565114120128" duration="624000" />
       <workItem from="1565159579170" duration="11854000" />
+      <workItem from="1565197361100" duration="2688000" />
+      <workItem from="1565246104078" duration="618000" />
     </task>
     <task id="LOCAL-00001" summary="added the initial files and libraries">
       <created>1537531445516</created>
@@ -250,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565187340817</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Merge the dev branch">
+      <created>1565197499161</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1565197499161</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,21 +287,8 @@
     <MESSAGE value="Create a method to grow the tree" />
     <MESSAGE value="Class to test the generation of rooms visually" />
     <MESSAGE value="Create new branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create new branch" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/byog/Core/Room.java</url>
-          <line>66</line>
-          <properties class="byog.Core.Room" method="verticalSplit">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Merge the dev branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge the dev branch" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Frank_the_Possum$TestPlay.ic" NAME="TestPlay Coverage Results" MODIFIED="1565095176893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

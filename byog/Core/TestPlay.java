@@ -7,13 +7,28 @@ public class TestPlay {
         long currentSeed = 64511135;
         getBaseParameters().tileRenderer.initialize(50, 50);
         getBaseParameters().setSEED(currentSeed);
+        getBaseParameters().initializeWorld();
+        getBaseParameters().initializeNumericWorld();
+
+//        getBaseParameters().printNumericWorld();
+
+        System.out.println("#########################");
+        System.out.println("#########################");
+        System.out.println("#########################");
+
 
         BSPTree gameTree = splitAndGrow(getBaseParameters().getBaseWorld(), 3);
 //        BSPTree gameTree = new BSPTree(getBaseParameters().getBaseWorld());
         gameTree.drawPartitions();
+
+        gameTree.storeLeaves();
+//        System.out.println(getBaseParameters().numberOfPaints + " ");
+
+//        getBaseParameters().getFinalRooms().get(1).drawRoom();
+        getBaseParameters().printNumericWorld();
         gameTree.printPartitions();
 
-        getBaseParameters().tileRenderer.renderFrame(getBaseParameters().world);
+        getBaseParameters().tileRenderer.renderFrame(getBaseParameters().getWorld());
 
     }
 

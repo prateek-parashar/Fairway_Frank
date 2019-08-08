@@ -1,9 +1,13 @@
 package byog.Core;
 
+import static byog.Core.Parameters.getBaseParameters;
+
+
 public class BSPTree {
     private Room root;
     private BSPTree leftChild = null;
     private BSPTree rightChild = null;
+
 
     public BSPTree() {
 
@@ -86,12 +90,22 @@ public class BSPTree {
         }
    }
 
+   /** Stores all the rooms in a ArrayList */
+   public void storeLeaves() {
+       if (this.isNull()) {
+           getBaseParameters().getFinalRooms().add(this.root);
+       } else {
+           this.leftChild.storeLeaves();
+            this.rightChild.storeLeaves();
+       }
+   }
+
    /** Function to print all the tree leaves */
    public void printPartitions() {
        if (this.isNull()) {
            System.out.println(this.root.getLeftCorner());
-           System.out.println(this.root.getHeight());
            System.out.println(this.root.getWidth());
+           System.out.println(this.root.getHeight());
        } else {
            this.leftChild.printPartitions();
            this.rightChild.printPartitions();
