@@ -12,14 +12,14 @@ public class Parameters {
     int numberOfPaints = 0;
 
     private static final Parameters baseParameters = new Parameters();
-    private Room baseWorld = new Room(60, 40, new Point(0, 0));
+    private Partition baseWorld = new Partition(60, 40, new Point(0, 0));
     private static long SEED;
     Random randomGenerator;
     TERenderer tileRenderer = new TERenderer();
     TETile[][] world = new TETile[baseWorld.getWidth()][baseWorld.getHeight()];
 
     int[][] numericWorld = new int[baseWorld.getWidth()][baseWorld.getHeight()];
-    ArrayList<Room> finalRooms = new ArrayList<>();
+    ArrayList<Partition> finalPartitions = new ArrayList<>();
 
     TETile floor = Tileset.FLOOR;
     TETile wall = Tileset.WALL;
@@ -31,7 +31,6 @@ public class Parameters {
         for (int i = 0; i < getBaseWorld().getWidth() ; i++) {
             for (int j = 0; j < getBaseWorld().getHeight(); j++) {
                 getBaseParameters().getWorld()[i][j] = getBaseParameters().nothing;
-
             }
 
         }
@@ -68,11 +67,11 @@ public class Parameters {
         return baseParameters;
     }
 
-    public Room getBaseWorld() {
+    public Partition getBaseWorld() {
         return baseWorld;
     }
 
-    public void setBaseWorld(Room baseWorld) {
+    public void setBaseWorld(Partition baseWorld) {
         this.baseWorld = baseWorld;
     }
 
@@ -116,12 +115,12 @@ public class Parameters {
         this.numericWorld = numericWorld;
     }
 
-    public ArrayList<Room> getFinalRooms() {
-        return finalRooms;
+    public ArrayList<Partition> getFinalPartitions() {
+        return finalPartitions;
     }
 
-    public void setFinalRooms(ArrayList<Room> finalRooms) {
-        this.finalRooms = finalRooms;
+    public void setFinalPartitions(ArrayList<Partition> finalPartitions) {
+        this.finalPartitions = finalPartitions;
     }
 
     public TETile getFloor() {

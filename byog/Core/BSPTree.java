@@ -4,7 +4,7 @@ import static byog.Core.Parameters.getBaseParameters;
 
 
 public class BSPTree {
-    private Room root;
+    private Partition root;
     private BSPTree leftChild = null;
     private BSPTree rightChild = null;
 
@@ -13,11 +13,11 @@ public class BSPTree {
 
     }
 
-    public BSPTree(Room root) {
+    public BSPTree(Partition root) {
         this.root = root;
     }
 
-    public BSPTree(Room root, BSPTree leftChild, BSPTree rightChild) {
+    public BSPTree(Partition root, BSPTree leftChild, BSPTree rightChild) {
         this.root = root;
         this.leftChild = leftChild;
         this.rightChild = rightChild;
@@ -30,11 +30,11 @@ public class BSPTree {
         this.setRightChild(bspTree);
     }
 
-    public Room getRoot() {
+    public Partition getRoot() {
         return root;
     }
 
-    public void setRoot(Room root) {
+    public void setRoot(Partition root) {
         this.root = root;
     }
 
@@ -55,14 +55,14 @@ public class BSPTree {
     }
 
     /** Randomly splits the baseNode vertically or horizontally and grow the tree with the resulting rooms */
-    public Room[] randomSplitAndGrow(int toss) {
-        Room[] newRooms;
+    public Partition[] randomSplitAndGrow(int toss) {
+        Partition[] newPartitions;
         if (toss == 1) {
-                newRooms = this.root.horizontalSplit();
+                newPartitions = this.root.horizontalSplit();
             } else {
-                newRooms =  this.root.verticalSplit();
+                newPartitions =  this.root.verticalSplit();
             }
-        return newRooms;
+        return newPartitions;
     }
 
     /** Checks to see if the Binary tree is a leaf with no nodes */
@@ -73,7 +73,7 @@ public class BSPTree {
     /** Draws all the partitions of the main world / leaves of the tree */
    public void drawPartitions() {
         if (this.isNull()) {
-            this.root.drawRoom();
+            this.root.drawPartition();
         } else {
             this.leftChild.drawPartitions();
             this.rightChild.drawPartitions();
@@ -83,7 +83,7 @@ public class BSPTree {
    /** Stores all the rooms in a ArrayList */
    public void storeLeaves() {
        if (this.isNull()) {
-           getBaseParameters().getFinalRooms().add(this.root);
+           getBaseParameters().getFinalPartitions().add(this.root);
        } else {
            this.leftChild.storeLeaves();
             this.rightChild.storeLeaves();

@@ -2,17 +2,17 @@ package byog.Core;
 
 import static byog.Core.Parameters.getBaseParameters;
 
-public class Room {
+public class Partition {
     private int width;
     private int height;
     private Point leftCorner;
     private Point centre = new Point(this.width / 2, this.height / 2);
 
-    public Room() {
+    public Partition() {
 
     }
 
-    public Room(int width, int height, Point leftCorner) {
+    public Partition(int width, int height, Point leftCorner) {
         this.width = width;
         this.height = height;
         this.leftCorner = leftCorner;
@@ -50,43 +50,43 @@ public class Room {
         this.centre = centre;
     }
 
-    /** Splits the given room vertically with a random chosen point in the x axis
-     * @return - list of the 2 new Room objects
+    /** Splits the given partition vertically with a random chosen point in the x axis
+     * @return - list of the 2 new Partition objects
      */
-    public Room[] verticalSplit() {
-        Room[] returnList = new Room[2];
-        Room baseRoom = this;
-        int breakPoint = getBaseParameters().randomGenerator.nextInt(baseRoom.getWidth());
+    public Partition[] verticalSplit() {
+        Partition[] returnList = new Partition[2];
+        Partition basePartition = this;
+        int breakPoint = getBaseParameters().randomGenerator.nextInt(basePartition.getWidth());
 
         double ratio = (double) breakPoint / this.getWidth();
 
         if((ratio < 0.40) || (ratio > 0.60)) {
             return this.verticalSplit();
         } else {
-            Point leftCorner1 = baseRoom.getLeftCorner();
-            Point leftCorner2 = new Point(baseRoom.getLeftCorner().getX() + breakPoint, baseRoom.getLeftCorner().getY());
+            Point leftCorner1 = basePartition.getLeftCorner();
+            Point leftCorner2 = new Point(basePartition.getLeftCorner().getX() + breakPoint, basePartition.getLeftCorner().getY());
 
             int width1 = leftCorner2.getX() - leftCorner1.getX();
-            int width2 = baseRoom.getWidth() - breakPoint;
+            int width2 = basePartition.getWidth() - breakPoint;
 
-            Room room1 = new Room(width1, baseRoom.getHeight(), leftCorner1);
-            Room room2 = new Room(width2, baseRoom.getHeight(), leftCorner2);
+            Partition partition1 = new Partition(width1, basePartition.getHeight(), leftCorner1);
+            Partition partition2 = new Partition(width2, basePartition.getHeight(), leftCorner2);
 
-            returnList[0] = room1;
-            returnList[1] = room2;
+            returnList[0] = partition1;
+            returnList[1] = partition2;
 
             return returnList;
         }
 
     }
 
-    /** Splits the given room horizontally with a random chosen point in the y axis
-     * @return - list of the 2 new Room objects
+    /** Splits the given partition horizontally with a random chosen point in the y axis
+     * @return - list of the 2 new Partition objects
      */
-    public Room[] horizontalSplit() {
-        Room[] returnList = new Room[2];
-        Room baseRoom = this;
-        int breakPoint = getBaseParameters().randomGenerator.nextInt(baseRoom.getHeight());
+    public Partition[] horizontalSplit() {
+        Partition[] returnList = new Partition[2];
+        Partition basePartition = this;
+        int breakPoint = getBaseParameters().randomGenerator.nextInt(basePartition.getHeight());
 
         double ratio = (double) breakPoint / this.getHeight();
 
@@ -94,17 +94,17 @@ public class Room {
             return this.horizontalSplit();
         } else {
 
-            Point leftCorner1 = baseRoom.getLeftCorner();
-            Point leftCorner2 = new Point(baseRoom.getLeftCorner().getX(), baseRoom.getLeftCorner().getY() + breakPoint);
+            Point leftCorner1 = basePartition.getLeftCorner();
+            Point leftCorner2 = new Point(basePartition.getLeftCorner().getX(), basePartition.getLeftCorner().getY() + breakPoint);
 
             int height1 = leftCorner2.getY() - leftCorner1.getY();
-            int height2 = baseRoom.getHeight() - breakPoint;
+            int height2 = basePartition.getHeight() - breakPoint;
 
-            Room room1 = new Room(baseRoom.getWidth(), height1, leftCorner1);
-            Room room2 = new Room(baseRoom.getWidth(), height2, leftCorner2);
+            Partition partition1 = new Partition(basePartition.getWidth(), height1, leftCorner1);
+            Partition partition2 = new Partition(basePartition.getWidth(), height2, leftCorner2);
 
-            returnList[0] = room1;
-            returnList[1] = room2;
+            returnList[0] = partition1;
+            returnList[1] = partition2;
 
             return returnList;
         }
@@ -114,7 +114,7 @@ public class Room {
      * First we fill the entire room with Wall tiles and then
      * we fill the room with floor tiles leaving the boundary walls intact
      * */
-    public void drawRoom() {
+    public void drawPartition() {
         for (int i = this.getLeftCorner().getX(); i < this.getWidth() + this.getLeftCorner().getX(); i++) {
             for (int j = this.getLeftCorner().getY(); j < this.getHeight() + this.getLeftCorner().getY(); j++) {
                 getBaseParameters().getWorld()[i][j] = getBaseParameters().getWall();

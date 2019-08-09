@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4629a22-d0ae-4f73-ba67-d861f0207527" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/byog/Core/BSPTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/BSPTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/byog/Core/Parameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Parameters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byog/Core/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Partition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/byog/Core/TestPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/TestPlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/BSPTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/BSPTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Parameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Parameters.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/TestPlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/TestPlay.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,8 +156,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.TestPlay" />
-        <item itemvalue="Application.RandomWorldDemo" />
         <item itemvalue="Application.BoringWorldDemo" />
+        <item itemvalue="Application.RandomWorldDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -180,7 +175,7 @@
       <workItem from="1565114120128" duration="624000" />
       <workItem from="1565159579170" duration="11854000" />
       <workItem from="1565197361100" duration="2688000" />
-      <workItem from="1565246104078" duration="618000" />
+      <workItem from="1565246104078" duration="9273000" />
     </task>
     <task id="LOCAL-00001" summary="added the initial files and libraries">
       <created>1537531445516</created>
@@ -259,7 +254,35 @@
       <option name="project" value="LOCAL" />
       <updated>1565197499161</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Clean up the master branch">
+      <created>1565278326037</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1565278326037</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Delete the debug branch">
+      <created>1565335540526</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1565335540526</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Refactor and correct the code for calculating the room ratio">
+      <created>1565350551202</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1565350551202</updated>
+    </task>
+    <task id="LOCAL-00015" summary="New branch to refactor code">
+      <created>1565361592455</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1565361592455</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +311,11 @@
     <MESSAGE value="Class to test the generation of rooms visually" />
     <MESSAGE value="Create new branch" />
     <MESSAGE value="Merge the dev branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge the dev branch" />
+    <MESSAGE value="Clean up the master branch" />
+    <MESSAGE value="Delete the debug branch" />
+    <MESSAGE value="Refactor and correct the code for calculating the room ratio" />
+    <MESSAGE value="New branch to refactor code" />
+    <option name="LAST_COMMIT_MESSAGE" value="New branch to refactor code" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Frank_the_Possum$TestPlay.ic" NAME="TestPlay Coverage Results" MODIFIED="1565095176893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
