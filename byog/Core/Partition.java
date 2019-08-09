@@ -112,6 +112,15 @@ public class Partition {
     }
 
     public Room createRoom() {
-        return null;
+        int roomWidth = Parameters.MIN_ROOM_SIZE + getBaseParameters().getRandomGenerator().
+                                                                nextInt(this.width - 5);
+        int roomHeight = Parameters.MIN_ROOM_SIZE + getBaseParameters().getRandomGenerator().
+                                                                nextInt(this.height - 5);
+        int xCoordinate = getBaseParameters().getRandomGenerator().nextInt(this.width - roomWidth);
+        int yCoordinate = getBaseParameters().getRandomGenerator().nextInt(this.height - roomHeight);
+
+        Room newRoom = new Room(roomWidth, roomHeight, new Point(xCoordinate, yCoordinate));
+
+        return newRoom;
     }
 }

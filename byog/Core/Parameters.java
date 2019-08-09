@@ -21,6 +21,8 @@ public class Parameters {
     int[][] numericWorld = new int[baseWorld.getWidth()][baseWorld.getHeight()];
     ArrayList<Partition> finalPartitions = new ArrayList<>();
 
+    static int MIN_ROOM_SIZE = 5;
+
     TETile floor = Tileset.FLOOR;
     TETile wall = Tileset.WALL;
     TETile player = Tileset.PLAYER;
