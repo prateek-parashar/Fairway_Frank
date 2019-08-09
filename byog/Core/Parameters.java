@@ -27,34 +27,6 @@ public class Parameters {
     TETile nothing = Tileset.NOTHING;
     TETile water = Tileset.WATER;
 
-    public void initializeWorld() {
-        for (int i = 0; i < getBaseWorld().getWidth() ; i++) {
-            for (int j = 0; j < getBaseWorld().getHeight(); j++) {
-                getBaseParameters().getWorld()[i][j] = getBaseParameters().nothing;
-            }
-
-        }
-    }
-
-    public void initializeNumericWorld() {
-        for (int i = 0; i < getBaseWorld().getWidth(); i++) {
-            for (int j = 0; j < getBaseWorld().getHeight(); j++) {
-                getBaseParameters().numericWorld[i][j] = 0;
-
-            }
-
-        }
-    }
-
-    public void printNumericWorld() {
-        for (int i = 0; i < getBaseWorld().getWidth(); i++) {
-            for (int j = 0; j < getBaseWorld().getHeight(); j++) {
-                System.out.print(getBaseParameters().getNumericWorld()[i][j]);
-            }
-            System.out.println("");
-        }
-    }
-
     public int getNumberOfPaints() {
         return numberOfPaints;
     }
@@ -161,5 +133,33 @@ public class Parameters {
 
     public void setWater(TETile water) {
         this.water = water;
+    }
+
+    public void initializeWorld() {
+        for (int i = 0; i < getBaseWorld().getWidth() ; i++) {
+            for (int j = 0; j < getBaseWorld().getHeight(); j++) {
+                getBaseParameters().getWorld()[i][j] = getBaseParameters().nothing;
+            }
+
+        }
+    }
+
+    public void initializeNumericWorld() {
+        for (int i = 0; i < getBaseWorld().getWidth(); i++) {
+            for (int j = 0; j < getBaseWorld().getHeight(); j++) {
+                getBaseParameters().numericWorld[i][j] = 0;
+
+            }
+
+        }
+    }
+
+    public void printNumericWorld() {
+        for (int i = 0; i < getBaseWorld().getWidth(); i++) {
+            for (int j = 0; j < getBaseWorld().getHeight(); j++) {
+                System.out.print(getBaseParameters().getNumericWorld()[i][j]);
+            }
+            System.out.println("");
+        }
     }
 }
