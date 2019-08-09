@@ -96,6 +96,7 @@ public class BSPTree {
            System.out.println(this.root.getLeftCorner());
            System.out.println(this.root.getWidth());
            System.out.println(this.root.getHeight());
+           System.out.println(this.root.getCentre());
        } else {
            this.leftChild.printPartitions();
            this.rightChild.printPartitions();

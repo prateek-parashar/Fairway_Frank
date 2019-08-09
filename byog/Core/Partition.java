@@ -6,7 +6,7 @@ public class Partition {
     private int width;
     private int height;
     private Point leftCorner;
-    private Point centre = new Point(this.width / 2, this.height / 2);
+    private Point centre;
 
     public Partition() {
 
@@ -16,6 +16,7 @@ public class Partition {
         this.width = width;
         this.height = height;
         this.leftCorner = leftCorner;
+        this.centre = new Point(this.width / 2, this.height / 2);
     }
 
     public int getWidth() {
