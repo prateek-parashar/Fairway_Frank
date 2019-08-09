@@ -78,7 +78,7 @@ public class Room {
         Room room1 = new Room(width1, baseRoom.getHeight(), leftCorner1);
         Room room2 = new Room(width2, baseRoom.getHeight(), leftCorner2);
 
-        if((room1.roomRatioVertical() > 0.30) &&  (room2.roomRatioVertical() > 0.30)) {
+        if((room1.roomRatioVertical() > 0.1) &&  (room2.roomRatioVertical() > 0.1)) {
             returnList[0] = room1;
             returnList[1] = room2;
 
@@ -117,11 +117,9 @@ public class Room {
 
     /** Used to draw the current room with a Floor tile */
     public void drawRoom() {
-        for (int i = this.getLeftCorner().getX(); i < this.getWidth() + this.getLeftCorner().getX(); i++) {
-            for (int j = this.getLeftCorner().getY(); j < this.getHeight() + this.getLeftCorner().getY(); j++) {
-                getBaseParameters().getNumericWorld()[i][j] = 1;
+        for (int i = this.getLeftCorner().getX() + 1; i < this.getWidth() + this.getLeftCorner().getX(); i++) {
+            for (int j = this.getLeftCorner().getY() + 1; j < this.getHeight() + this.getLeftCorner().getY(); j++) {
                 getBaseParameters().getWorld()[i][j] = getBaseParameters().getFloor();
-                getBaseParameters().numberOfPaints += 1;
             }
         }
     }

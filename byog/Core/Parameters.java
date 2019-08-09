@@ -14,7 +14,7 @@ public class Parameters {
     private static final Parameters baseParameters = new Parameters();
     private Room baseWorld = new Room(50, 50, new Point(0, 0));
     private static long SEED;
-    Random randomGenerator = new Random(SEED);
+    Random randomGenerator;
     TERenderer tileRenderer = new TERenderer();
     TETile[][] world = new TETile[baseWorld.getWidth()][baseWorld.getHeight()];
 
@@ -30,7 +30,7 @@ public class Parameters {
     public void initializeWorld() {
         for (int i = 0; i < getBaseWorld().getWidth() ; i++) {
             for (int j = 0; j < getBaseWorld().getHeight(); j++) {
-                getBaseParameters().getWorld()[i][j] = getBaseParameters().water;
+                getBaseParameters().getWorld()[i][j] = getBaseParameters().wall;
 
             }
 

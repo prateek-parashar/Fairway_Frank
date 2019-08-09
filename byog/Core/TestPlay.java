@@ -1,12 +1,15 @@
 package byog.Core;
 
+import java.util.Random;
+
 import static byog.Core.Parameters.getBaseParameters;
 
 public class TestPlay {
     public static void main(String[] args) {
-        long currentSeed = 64511135;
-        getBaseParameters().tileRenderer.initialize(50, 50);
-        getBaseParameters().setSEED(currentSeed);
+        long currentSeed = 9595995;
+        getBaseParameters().tileRenderer.initialize(getBaseParameters().getBaseWorld().getWidth(),
+                                                                getBaseParameters().getBaseWorld().getHeight());
+        getBaseParameters().setRandomGenerator(new Random(currentSeed));
         getBaseParameters().initializeWorld();
 
         BSPTree gameTree = splitAndGrow(getBaseParameters().getBaseWorld(), 3);
