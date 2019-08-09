@@ -12,7 +12,7 @@ public class Parameters {
     int numberOfPaints = 0;
 
     private static final Parameters baseParameters = new Parameters();
-    private Room baseWorld = new Room(50, 50, new Point(0, 0));
+    private Room baseWorld = new Room(80, 40, new Point(0, 0));
     private static long SEED;
     Random randomGenerator;
     TERenderer tileRenderer = new TERenderer();

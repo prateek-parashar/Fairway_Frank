@@ -6,13 +6,13 @@ import static byog.Core.Parameters.getBaseParameters;
 
 public class TestPlay {
     public static void main(String[] args) {
-        long currentSeed = 65465;
+        long currentSeed = 9865522;
         getBaseParameters().tileRenderer.initialize(getBaseParameters().getBaseWorld().getWidth(),
                                                                 getBaseParameters().getBaseWorld().getHeight());
         getBaseParameters().setRandomGenerator(new Random(currentSeed));
         getBaseParameters().initializeWorld();
 
-        BSPTree gameTree = splitAndGrow(getBaseParameters().getBaseWorld(), 4);
+        BSPTree gameTree = splitAndGrow(getBaseParameters().getBaseWorld(), 5);
         gameTree.drawPartitions();
         gameTree.printPartitions();
         getBaseParameters().tileRenderer.renderFrame(getBaseParameters().getWorld());
