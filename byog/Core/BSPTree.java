@@ -57,7 +57,7 @@ public class BSPTree {
     /** Randomly splits the baseNode vertically or horizontally and grow the tree with the resulting rooms */
     public Room[] randomSplitAndGrow(int toss) {
         Room[] newRooms;
-        if (toss == 0) {
+        if (toss == 1) {
                 newRooms = this.root.horizontalSplit();
             } else {
                 newRooms =  this.root.verticalSplit();

@@ -12,7 +12,7 @@ public class TestPlay {
         getBaseParameters().setRandomGenerator(new Random(currentSeed));
         getBaseParameters().initializeWorld();
 
-        BSPTree gameTree = splitAndGrow(getBaseParameters().getBaseWorld(), 5);
+        BSPTree gameTree = splitAndGrow(getBaseParameters().getBaseWorld(), 4);
         gameTree.drawPartitions();
         gameTree.printPartitions();
         getBaseParameters().tileRenderer.renderFrame(getBaseParameters().getWorld());
