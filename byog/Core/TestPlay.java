@@ -13,7 +13,6 @@ public class TestPlay {
         getBaseParameters().initializeWorld();
 
         BSPTree gameTree = splitAndGrow(getBaseParameters().getBaseWorld(), 4);
-        gameTree.drawPartitions();
         gameTree.printPartitions();
         getBaseParameters().tileRenderer.renderFrame(getBaseParameters().getWorld());
 

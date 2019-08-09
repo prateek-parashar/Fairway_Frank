@@ -70,16 +70,6 @@ public class BSPTree {
         return ((this.leftChild == null) && (this.rightChild == null));
     }
 
-    /** Draws all the partitions of the main world / leaves of the tree */
-   public void drawPartitions() {
-        if (this.isNull()) {
-            this.root.drawPartition();
-        } else {
-            this.leftChild.drawPartitions();
-            this.rightChild.drawPartitions();
-        }
-   }
-
    /** Stores all the rooms in a ArrayList */
    public void storeLeaves() {
        if (this.isNull()) {
