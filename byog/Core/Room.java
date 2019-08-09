@@ -41,7 +41,7 @@ public class Room {
      * First we fill the entire room with Wall tiles and then
      * we fill the room with floor tiles leaving the boundary walls intact
      * */
-    public void drawPartition() {
+    public void drawRoom() {
         for (int i = this.getLeftCorner().getX(); i < this.getWidth() + this.getLeftCorner().getX(); i++) {
             for (int j = this.getLeftCorner().getY(); j < this.getHeight() + this.getLeftCorner().getY(); j++) {
                 getBaseParameters().getWorld()[i][j] = getBaseParameters().getWall();

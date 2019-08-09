@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4629a22-d0ae-4f73-ba67-d861f0207527" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/byog/Core/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Parameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Parameters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byog/Core/Partition.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Partition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byog/Core/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Room.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -155,8 +154,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.TestPlay" />
-        <item itemvalue="Application.BoringWorldDemo" />
         <item itemvalue="Application.RandomWorldDemo" />
+        <item itemvalue="Application.BoringWorldDemo" />
+        <item itemvalue="Application.TestPlay" />
+        <item itemvalue="Application.BoringWorldDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -295,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565364018205</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Refactor the code and add the new Room class">
+      <created>1565365129294</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1565365129294</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +338,8 @@
     <MESSAGE value="New branch to refactor code" />
     <MESSAGE value="Merge branches" />
     <MESSAGE value="Delete refactor branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete refactor branch" />
+    <MESSAGE value="Refactor the code and add the new Room class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor the code and add the new Room class" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Frank_the_Possum$TestPlay.ic" NAME="TestPlay Coverage Results" MODIFIED="1565095176893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
