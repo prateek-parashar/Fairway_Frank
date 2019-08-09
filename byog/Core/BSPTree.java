@@ -56,23 +56,13 @@ public class BSPTree {
 
     /** Randomly splits the baseNode vertically or horizontally and grow the tree with the resulting rooms */
     public Room[] randomSplitAndGrow(int toss) {
-            if (toss == 0) {
-                Room[] newRooms = this.root.horizontalSplit();
-                return newRooms;
-
+        Room[] newRooms;
+        if (toss == 0) {
+                newRooms = this.root.horizontalSplit();
             } else {
-                Room[] newRooms =  this.root.verticalSplit();
-                return newRooms;
+                newRooms =  this.root.verticalSplit();
             }
-    }
-
-    /** Does a pre - order traversal of the tree and creates partitions along the way */
-    public void createPartitions(int iterations) {
-        while (iterations > 0) {
-            this.randomSplitAndGrow(iterations % 2);
-            this.leftChild.createPartitions(iterations - 1);
-            this.rightChild.createPartitions(iterations - 1);
-        }
+        return newRooms;
     }
 
     /** Checks to see if the Binary tree is a leaf with no nodes */

@@ -30,7 +30,7 @@ public class Parameters {
     public void initializeWorld() {
         for (int i = 0; i < getBaseWorld().getWidth() ; i++) {
             for (int j = 0; j < getBaseWorld().getHeight(); j++) {
-                getBaseParameters().getWorld()[i][j] = getBaseParameters().wall;
+                getBaseParameters().getWorld()[i][j] = getBaseParameters().nothing;
 
             }
 

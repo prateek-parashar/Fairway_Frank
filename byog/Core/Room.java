@@ -50,17 +50,6 @@ public class Room {
         this.centre = centre;
     }
 
-    /** Returns the ratio of the height and width of the room */
-    public double roomRatioHorizontal() {
-        double x = (double)this.getHeight() / this.getWidth();
-        return x;
-    }
-
-    public double roomRatioVertical() {
-        double x = (double)this.getWidth() / this.getHeight();
-        return x;
-    }
-
     /** Splits the given room vertically with a random chosen point in the x axis
      * @return - list of the 2 new Room objects
      */
@@ -69,23 +58,26 @@ public class Room {
         Room baseRoom = this;
         int breakPoint = getBaseParameters().randomGenerator.nextInt(baseRoom.getWidth());
 
-        Point leftCorner1 = baseRoom.getLeftCorner();
-        Point leftCorner2 = new Point(baseRoom.getLeftCorner().getX() + breakPoint, baseRoom.getLeftCorner().getY());
+        double ratio = (double) breakPoint / this.getWidth();
 
-        int width1 = leftCorner2.getX() - leftCorner1.getX();
-        int width2 = baseRoom.getWidth() - breakPoint;
+        if((ratio < 0.40) || (ratio > 0.60)) {
+            return this.verticalSplit();
+        } else {
+            Point leftCorner1 = baseRoom.getLeftCorner();
+            Point leftCorner2 = new Point(baseRoom.getLeftCorner().getX() + breakPoint, baseRoom.getLeftCorner().getY());
 
-        Room room1 = new Room(width1, baseRoom.getHeight(), leftCorner1);
-        Room room2 = new Room(width2, baseRoom.getHeight(), leftCorner2);
+            int width1 = leftCorner2.getX() - leftCorner1.getX();
+            int width2 = baseRoom.getWidth() - breakPoint;
 
-        if((room1.roomRatioVertical() > 0.1) &&  (room2.roomRatioVertical() > 0.1)) {
+            Room room1 = new Room(width1, baseRoom.getHeight(), leftCorner1);
+            Room room2 = new Room(width2, baseRoom.getHeight(), leftCorner2);
+
             returnList[0] = room1;
             returnList[1] = room2;
 
             return returnList;
-        } else {
-            return this.verticalSplit();
         }
+
     }
 
     /** Splits the given room horizontally with a random chosen point in the y axis
@@ -96,29 +88,41 @@ public class Room {
         Room baseRoom = this;
         int breakPoint = getBaseParameters().randomGenerator.nextInt(baseRoom.getHeight());
 
-        Point leftCorner1 = baseRoom.getLeftCorner();
-        Point leftCorner2 = new Point(baseRoom.getLeftCorner().getX(), baseRoom.getLeftCorner().getY() + breakPoint);
+        double ratio = (double) breakPoint / this.getHeight();
 
-        int height1 = leftCorner2.getY() - leftCorner1.getY();
-        int height2 = baseRoom.getHeight() - breakPoint;
+        if((ratio < 0.40) || (ratio > 0.60)) {
+            return this.horizontalSplit();
+        } else {
 
-        Room room1 = new Room(baseRoom.getWidth(), height1, leftCorner1);
-        Room room2 = new Room(baseRoom.getWidth(), height2, leftCorner2);
+            Point leftCorner1 = baseRoom.getLeftCorner();
+            Point leftCorner2 = new Point(baseRoom.getLeftCorner().getX(), baseRoom.getLeftCorner().getY() + breakPoint);
 
-        if((room1.roomRatioHorizontal() > 0.30) &&  (room2.roomRatioHorizontal() > 0.30)) {
+            int height1 = leftCorner2.getY() - leftCorner1.getY();
+            int height2 = baseRoom.getHeight() - breakPoint;
+
+            Room room1 = new Room(baseRoom.getWidth(), height1, leftCorner1);
+            Room room2 = new Room(baseRoom.getWidth(), height2, leftCorner2);
+
             returnList[0] = room1;
             returnList[1] = room2;
 
             return returnList;
-        } else {
-            return this.horizontalSplit();
         }
     }
 
-    /** Used to draw the current room with a Floor tile */
+    /** Used to draw the current room
+     * First we fill the entire room with Wall tiles and then
+     * we fill the room with floor tiles leaving the boundary walls intact
+     * */
     public void drawRoom() {
-        for (int i = this.getLeftCorner().getX() + 1; i < this.getWidth() + this.getLeftCorner().getX(); i++) {
-            for (int j = this.getLeftCorner().getY() + 1; j < this.getHeight() + this.getLeftCorner().getY(); j++) {
+        for (int i = this.getLeftCorner().getX(); i < this.getWidth() + this.getLeftCorner().getX(); i++) {
+            for (int j = this.getLeftCorner().getY(); j < this.getHeight() + this.getLeftCorner().getY(); j++) {
+                getBaseParameters().getWorld()[i][j] = getBaseParameters().getWall();
+            }
+        }
+
+        for (int i = getLeftCorner().getX() + 1; i < this.getWidth() + this.getLeftCorner().getX() - 1 ; i++) {
+            for (int j = this.getLeftCorner().getY() + 1; j < this.getHeight() + this.getLeftCorner().getY() - 1; j++) {
                 getBaseParameters().getWorld()[i][j] = getBaseParameters().getFloor();
             }
         }
