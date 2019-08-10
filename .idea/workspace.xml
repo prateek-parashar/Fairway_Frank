@@ -369,18 +369,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Merged the changes from dev to master" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/byog/Core/Hallway.java</url>
-          <line>65</line>
-          <properties class="byog.Core.Hallway" method="drawHorizontalHallway">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="getBaseParameters().getFinalHallways()" language="JAVA" />
