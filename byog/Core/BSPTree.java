@@ -70,16 +70,6 @@ public class BSPTree {
         return ((this.leftChild == null) && (this.rightChild == null));
     }
 
-   /** Stores all the rooms in a ArrayList */
-   public void storeLeaves() {
-       if (this.isNull()) {
-           getBaseParameters().getFinalPartitions().add(this.root);
-       } else {
-           this.leftChild.storeLeaves();
-            this.rightChild.storeLeaves();
-       }
-   }
-
    /** Function to print all the tree leaves */
    public void printPartitions() {
        if (this.isNull()) {
@@ -92,5 +82,16 @@ public class BSPTree {
            this.rightChild.printPartitions();
        }
    }
+
+   /** Creates and stores the room in each and every partition at the leaves end of the tree */
+   public void generateRooms() {
+       if(this.isNull()) {
+           getBaseParameters().getFinalRooms().add(this.root.createRoom());
+       } else {
+           this.leftChild.generateRooms();
+           this.rightChild.generateRooms();
+       }
+   }
+
 
 }

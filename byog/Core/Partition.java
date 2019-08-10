@@ -57,7 +57,7 @@ public class Partition {
     public Partition[] verticalSplit() {
         Partition[] returnList = new Partition[2];
         Partition basePartition = this;
-        int breakPoint = getBaseParameters().randomGenerator.nextInt(basePartition.getWidth());
+        int breakPoint = getBaseParameters().getRandomGenerator().nextInt(basePartition.getWidth());
 
         double ratio = (double) breakPoint / this.getWidth();
 
@@ -87,7 +87,7 @@ public class Partition {
     public Partition[] horizontalSplit() {
         Partition[] returnList = new Partition[2];
         Partition basePartition = this;
-        int breakPoint = getBaseParameters().randomGenerator.nextInt(basePartition.getHeight());
+        int breakPoint = getBaseParameters().getRandomGenerator().nextInt(basePartition.getHeight());
 
         double ratio = (double) breakPoint / this.getHeight();
 
@@ -116,8 +116,10 @@ public class Partition {
                                                                 nextInt(this.width - 5);
         int roomHeight = Parameters.MIN_ROOM_SIZE + getBaseParameters().getRandomGenerator().
                                                                 nextInt(this.height - 5);
-        int xCoordinate = getBaseParameters().getRandomGenerator().nextInt(this.width - roomWidth);
-        int yCoordinate = getBaseParameters().getRandomGenerator().nextInt(this.height - roomHeight);
+        int xCoordinate = this.getLeftCorner().getX() + getBaseParameters().getRandomGenerator()
+                                                                .nextInt(this.width - roomWidth);
+        int yCoordinate = this.getLeftCorner().getY() + getBaseParameters().getRandomGenerator()
+                                                                .nextInt(this.height - roomHeight);
 
         Room newRoom = new Room(roomWidth, roomHeight, new Point(xCoordinate, yCoordinate));
 

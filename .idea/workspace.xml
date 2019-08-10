@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="b4629a22-d0ae-4f73-ba67-d861f0207527" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Parameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Parameters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byog/Core/BSPTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/BSPTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byog/Core/Partition.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Partition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byog/Core/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/byog/Core/TestPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/TestPlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/BSPTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/BSPTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Parameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Parameters.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Partition.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Partition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Room.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/TestPlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/TestPlay.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

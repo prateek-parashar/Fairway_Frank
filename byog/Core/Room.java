@@ -1,11 +1,19 @@
 package byog.Core;
 
+import com.sun.security.jgss.GSSUtil;
+
+import java.util.ArrayList;
+
 import static byog.Core.Parameters.getBaseParameters;
 
 public class Room {
     private int width;
     private int height;
     private Point leftCorner;
+
+    public Room() {
+
+    }
 
     public Room(int width, int height, Point leftCorner) {
         this.width = width;
@@ -37,6 +45,15 @@ public class Room {
         this.leftCorner = leftCorner;
     }
 
+    @Override
+    public String toString() {
+        return "Room{" +
+                "width=" + width +
+                ", height=" + height +
+                ", leftCorner=" + leftCorner +
+                '}';
+    }
+
     /** Used to draw the current room
      * First we fill the entire room with Wall tiles and then
      * we fill the room with floor tiles leaving the boundary walls intact
@@ -54,4 +71,5 @@ public class Room {
             }
         }
     }
+
 }

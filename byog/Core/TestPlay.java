@@ -8,16 +8,16 @@ import static byog.Core.Parameters.getBaseParameters;
 public class TestPlay {
     public static void main(String[] args) {
         long currentSeed = 12345;
-        getBaseParameters().tileRenderer.initialize(getBaseParameters().getBaseWorld().getWidth(),
+        getBaseParameters().getTileRenderer().initialize(getBaseParameters().getBaseWorld().getWidth(),
                                                                 getBaseParameters().getBaseWorld().getHeight());
         getBaseParameters().setRandomGenerator(new Random(currentSeed));
         getBaseParameters().initializeWorld();
 
         BSPTree gameTree = splitAndGrow(getBaseParameters().getBaseWorld(), 4);
-
-        ArrayList<Room> rooms = new ArrayList<>();
-
-        getBaseParameters().tileRenderer.renderFrame(getBaseParameters().getWorld());
+        gameTree.generateRooms();
+        printRooms(getBaseParameters().getFinalRooms());
+        renderRooms(getBaseParameters().getFinalRooms());
+        getBaseParameters().getTileRenderer().renderFrame(getBaseParameters().getWorld());
 
     }
 
@@ -33,9 +33,16 @@ public class TestPlay {
         return baseTree;
     }
 
-    public static void generateRooms(BSPTree bspTree) {
-        if (bspTree.isNull()) {
-            bspTree.getRoot().createRoom();
+    public static void renderRooms(ArrayList<Room> roomList) {
+        for (Room r : roomList) {
+            r.drawRoom();
         }
     }
+
+    public static void printRooms(ArrayList<Room> roomList) {
+        for (Room r : roomList) {
+            System.out.println(r);
+        }
+    }
+
 }
