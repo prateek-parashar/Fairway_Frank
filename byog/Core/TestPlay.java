@@ -13,7 +13,7 @@ public class TestPlay {
         getBaseParameters().setRandomGenerator(new Random(currentSeed));
         getBaseParameters().initializeWorld();
 
-        BSPTree gameTree = splitAndGrow(getBaseParameters().getBaseWorld(), 2);
+        BSPTree gameTree = splitAndGrow(getBaseParameters().getBaseWorld(), 4);
 
         gameTree.generateRooms();
         gameTree.generateHallways();
@@ -22,6 +22,7 @@ public class TestPlay {
 
         renderHallways(getBaseParameters().getFinalHallways());
         renderRooms(getBaseParameters().getFinalRooms());
+        fillHallways(getBaseParameters().getFinalHallways());
 
         getBaseParameters().getTileRenderer().renderFrame(getBaseParameters().getWorld());
 
@@ -66,6 +67,12 @@ public class TestPlay {
     public static void renderHallways(ArrayList<Hallway> hallwayList) {
         for (Hallway h : hallwayList) {
             h.drawHallway();
+        }
+    }
+
+    public static void fillHallways(ArrayList<Hallway> hallwayList) {
+        for (Hallway h : hallwayList) {
+            h.fillHallway();
         }
     }
 }
