@@ -16,9 +16,9 @@ public class Hallway {
         this.end = end;
 
         if (Point.onHorizontalLine(start, end)) {
-            this.length = start.getX() - end.getX();
+            this.length = end.getX() - start.getX();
         } else if (Point.onVerticalLine(start, end)) {
-            this.length = start.getY() - start.getY();
+            this.length = end.getY() - start.getY();
         }
     }
 
@@ -46,7 +46,15 @@ public class Hallway {
         this.length = length;
     }
 
-    public void drawHorizontalHallway() {
+    public void drawHallway() {
+        if (Point.onHorizontalLine(this.start, this.end)) {
+            this.drawHorizontalHallway();
+        } else if (Point.onVerticalLine(this.start, this.end)) {
+            this.drawVerticalHallway();
+        }
+    }
+
+    private void drawHorizontalHallway() {
         for (int x = start.getX() ; x < length; x++) {
             getBaseParameters().getWorld()[x][this.getStart().getY() + 1] = getBaseParameters().getWall();
         }
@@ -56,7 +64,7 @@ public class Hallway {
         }
     }
 
-    public void drawVericalHallway() {
+    private void drawVerticalHallway() {
         for (int y = start.getY() ; y < length; y++) {
             getBaseParameters().getWorld()[this.getStart().getX() + 1][y] = getBaseParameters().getWall();
         }

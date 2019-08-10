@@ -95,10 +95,11 @@ public class BSPTree {
        if (this.isNull()) {
            return;
        } else {
-           Partition.createHallways(this.leftChild.root, this.rightChild.root);
+           Hallway hallWay = new Hallway(this.getLeftChild().getRoot().getCentre(),
+                                            this.getRightChild().getRoot().getCentre());
+           getBaseParameters().getFinalHallways().add(hallWay);
            this.leftChild.generateHallways();
            this.rightChild.generateHallways();
        }
    }
-
 }

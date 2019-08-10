@@ -22,7 +22,7 @@ public class Parameters {
 
     private ArrayList<Partition> finalPartitions = new ArrayList<>();
     private ArrayList<Room> finalRooms = new ArrayList<>();
-
+    private ArrayList<Hallway> finalHallways = new ArrayList<>();
     static int MIN_ROOM_SIZE = 4;
 
     private TETile floor = Tileset.FLOOR;
@@ -153,6 +153,14 @@ public class Parameters {
 
     public static void setMinRoomSize(int minRoomSize) {
         MIN_ROOM_SIZE = minRoomSize;
+    }
+
+    public ArrayList<Hallway> getFinalHallways() {
+        return finalHallways;
+    }
+
+    public void setFinalHallways(ArrayList<Hallway> finalHallways) {
+        this.finalHallways = finalHallways;
     }
 
     public void initializeWorld() {
