@@ -63,6 +63,14 @@ public class Hallway {
         }
     }
 
+    public void fillHallway() {
+        if (Point.onHorizontalLine(this.start, this.end)) {
+            this.fillHorizontalHallway();
+        } else if (Point.onVerticalLine(this.start, this.end)) {
+            this.fillVerticalHallway();
+        }
+    }
+
     private void drawHorizontalHallway() {
         for (int x = start.getX() ; x < end.getX(); x++) {
             getBaseParameters().getWorld()[x][this.getStart().getY() + 1] = getBaseParameters().getWall();
@@ -74,12 +82,24 @@ public class Hallway {
     }
 
     private void drawVerticalHallway() {
-        for (int y = start.getY() ; y < end.getY(); y++) {
+        for (int y = start.getY(); y < end.getY(); y++) {
             getBaseParameters().getWorld()[this.getStart().getX() + 1][y] = getBaseParameters().getWall();
         }
 
-        for (int y = start.getY() ; y < end.getY(); y++) {
+        for (int y = start.getY(); y < end.getY(); y++) {
             getBaseParameters().getWorld()[this.getStart().getX() - 1][y] = getBaseParameters().getWall();
+        }
+    }
+
+    private void fillHorizontalHallway() {
+        for (int x = start.getX(); x < end.getX(); x++) {
+            getBaseParameters().getWorld()[x][this.getStart().getY()] = getBaseParameters().getFloor();
+        }
+    }
+
+    public void fillVerticalHallway() {
+        for (int y = start.getY(); y < end.getY(); y++) {
+            getBaseParameters().getWorld()[this.getStart().getX()][y] = getBaseParameters().getFloor();
         }
     }
 
