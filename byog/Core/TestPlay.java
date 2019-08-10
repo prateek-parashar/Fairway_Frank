@@ -13,11 +13,12 @@ public class TestPlay {
         getBaseParameters().setRandomGenerator(new Random(currentSeed));
         getBaseParameters().initializeWorld();
 
-        BSPTree gameTree = splitAndGrow(getBaseParameters().getBaseWorld(), 1);
-        gameTree.generateHallways();
+        BSPTree gameTree = splitAndGrow(getBaseParameters().getBaseWorld(), 2);
 
         gameTree.generateRooms();
         gameTree.generateHallways();
+
+        gameTree.storePartitions();
 
         renderHallways(getBaseParameters().getFinalHallways());
         renderRooms(getBaseParameters().getFinalRooms());
@@ -47,6 +48,12 @@ public class TestPlay {
     public static void printRooms(ArrayList<Room> roomList) {
         for (Room r : roomList) {
             System.out.println(r);
+        }
+    }
+
+    public static void printHallways(ArrayList<Hallway> hallwayList) {
+        for (Hallway h : hallwayList) {
+            System.out.println(h);
         }
     }
 
