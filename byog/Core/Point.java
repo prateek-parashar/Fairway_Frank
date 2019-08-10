@@ -32,4 +32,16 @@ public class Point {
                 ", y=" + y +
                 '}';
     }
+
+    /** Returns true if 2 point lie in a vertical line */
+
+    public static boolean onVerticalLine(Point p1, Point p2) {
+        return (p1.getX() - p2.getX()) == 0;
+    }
+
+    /** Returns true if 2 point lie in a horizontal line */
+
+    public static boolean onHorizontalLine(Point p1, Point p2) {
+        return (p1.getY() - p2.getY()) == 0;
+    }
 }

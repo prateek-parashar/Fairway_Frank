@@ -20,9 +20,10 @@ public class Parameters {
 
     private int[][] numericWorld = new int[baseWorld.getWidth()][baseWorld.getHeight()];
 
+    private ArrayList<Partition> finalPartitions = new ArrayList<>();
     private ArrayList<Room> finalRooms = new ArrayList<>();
 
-    static int MIN_ROOM_SIZE = 5;
+    static int MIN_ROOM_SIZE = 4;
 
     private TETile floor = Tileset.FLOOR;
     private TETile wall = Tileset.WALL;
@@ -136,6 +137,22 @@ public class Parameters {
 
     public void setWater(TETile water) {
         this.water = water;
+    }
+
+    public ArrayList<Partition> getFinalPartitions() {
+        return finalPartitions;
+    }
+
+    public void setFinalPartitions(ArrayList<Partition> finalPartitions) {
+        this.finalPartitions = finalPartitions;
+    }
+
+    public static int getMinRoomSize() {
+        return MIN_ROOM_SIZE;
+    }
+
+    public static void setMinRoomSize(int minRoomSize) {
+        MIN_ROOM_SIZE = minRoomSize;
     }
 
     public void initializeWorld() {

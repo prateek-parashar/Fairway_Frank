@@ -71,15 +71,12 @@ public class BSPTree {
     }
 
    /** Function to print all the tree leaves */
-   public void printPartitions() {
+   public void storePartitions() {
        if (this.isNull()) {
-           System.out.println(this.root.getLeftCorner());
-           System.out.println(this.root.getWidth());
-           System.out.println(this.root.getHeight());
-           System.out.println(this.root.getCentre());
+           getBaseParameters().getFinalPartitions().add(this.root);
        } else {
-           this.leftChild.printPartitions();
-           this.rightChild.printPartitions();
+           this.leftChild.storePartitions();
+           this.rightChild.storePartitions();
        }
    }
 
