@@ -1,9 +1,5 @@
 package byog.Core;
 
-import com.sun.security.jgss.GSSUtil;
-
-import java.util.ArrayList;
-
 import static byog.Core.Parameters.getBaseParameters;
 
 public class Room {

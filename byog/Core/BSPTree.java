@@ -57,7 +57,7 @@ public class BSPTree {
     /** Randomly splits the baseNode vertically or horizontally and grow the tree with the resulting rooms */
     public Partition[] randomSplitAndGrow(int toss) {
         Partition[] newPartitions;
-        if (toss == 1) {
+        if (toss == 0) {
                 newPartitions = this.root.horizontalSplit();
             } else {
                 newPartitions =  this.root.verticalSplit();
@@ -93,5 +93,15 @@ public class BSPTree {
        }
    }
 
+   /** Creates hallways between 2 given partition at the leaves of the tree */
+   public void generateHallways() {
+       if (this.isNull()) {
+           return;
+       } else {
+           Partition.createHallways(this.leftChild.root, this.rightChild.root);
+           this.leftChild.generateHallways();
+           this.rightChild.generateHallways();
+       }
+   }
 
 }

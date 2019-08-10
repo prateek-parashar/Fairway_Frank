@@ -12,7 +12,7 @@ public class Parameters {
     private int numberOfPaints = 0;
 
     private static final Parameters baseParameters = new Parameters();
-    private Partition baseWorld = new Partition(60, 40, new Point(0, 0));
+    private Partition baseWorld = new Partition(70, 40, new Point(0, 0));
     private static long SEED;
     private Random randomGenerator;
     private TERenderer tileRenderer = new TERenderer();

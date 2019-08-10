@@ -16,7 +16,8 @@ public class Partition {
         this.width = width;
         this.height = height;
         this.leftCorner = leftCorner;
-        this.centre = new Point(this.width / 2, this.height / 2);
+        this.centre = new Point(this.width / 2 + this.getLeftCorner().getX(),
+                                this.height / 2 + this.getLeftCorner().getY());
     }
 
     public int getWidth() {
@@ -111,6 +112,8 @@ public class Partition {
         }
     }
 
+    /** Create a room of minimum size in the given partition at random location within the defined parameter */
+
     public Room createRoom() {
         int roomWidth = Parameters.MIN_ROOM_SIZE + getBaseParameters().getRandomGenerator().
                                                                 nextInt(this.width - 5);
@@ -124,5 +127,26 @@ public class Partition {
         Room newRoom = new Room(roomWidth, roomHeight, new Point(xCoordinate, yCoordinate));
 
         return newRoom;
+    }
+
+    /** Create a hallway between 2 given partitions */
+
+    public static void createHallways(Partition p1, Partition p2) {
+        int width = Math.abs(p1.getCentre().getX() - p2.getCentre().getX());
+        if(width == 0) {
+            width += 1;
+        }
+
+        int height = Math.abs(p1.getCentre().getY() - p2.getCentre().getY());
+        if (height == 0) {
+            height += 1;
+        }
+
+        for (int i = p1.getCentre().getX(); i < p1.getCentre().getX() + width; i++) {
+            for (int j = p1.getCentre().getY(); j < p1.getCentre().getY() + height; j++) {
+                getBaseParameters().getWorld()[i][j] = getBaseParameters().getFloor();
+            }
+        }
+
     }
 }
