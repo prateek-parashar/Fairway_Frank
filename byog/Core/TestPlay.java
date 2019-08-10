@@ -1,5 +1,6 @@
 package byog.Core;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import static byog.Core.Parameters.getBaseParameters;
@@ -13,9 +14,8 @@ public class TestPlay {
         getBaseParameters().initializeWorld();
 
         BSPTree gameTree = splitAndGrow(getBaseParameters().getBaseWorld(), 4);
-//        gameTree.printPartitions();
-        Room test = gameTree.getRoot().createRoom();
-        test.drawRoom();
+
+        ArrayList<Room> rooms = new ArrayList<>();
 
         getBaseParameters().tileRenderer.renderFrame(getBaseParameters().getWorld());
 
@@ -31,5 +31,11 @@ public class TestPlay {
             baseTree.addRightChild(splitAndGrow(childPartitions[1], iterations - 1));
         }
         return baseTree;
+    }
+
+    public static void generateRooms(BSPTree bspTree) {
+        if (bspTree.isNull()) {
+            bspTree.getRoot().createRoom();
+        }
     }
 }

@@ -9,25 +9,26 @@ import java.util.Random;
 
 public class Parameters {
 
-    int numberOfPaints = 0;
+    private int numberOfPaints = 0;
 
     private static final Parameters baseParameters = new Parameters();
     private Partition baseWorld = new Partition(60, 40, new Point(0, 0));
     private static long SEED;
-    Random randomGenerator;
-    TERenderer tileRenderer = new TERenderer();
-    TETile[][] world = new TETile[baseWorld.getWidth()][baseWorld.getHeight()];
+    private Random randomGenerator;
+    private TERenderer tileRenderer = new TERenderer();
+    private TETile[][] world = new TETile[baseWorld.getWidth()][baseWorld.getHeight()];
 
-    int[][] numericWorld = new int[baseWorld.getWidth()][baseWorld.getHeight()];
-    ArrayList<Partition> finalPartitions = new ArrayList<>();
+    private int[][] numericWorld = new int[baseWorld.getWidth()][baseWorld.getHeight()];
+
+    private ArrayList<Room> finalRooms = new ArrayList<>();
 
     static int MIN_ROOM_SIZE = 5;
 
-    TETile floor = Tileset.FLOOR;
-    TETile wall = Tileset.WALL;
-    TETile player = Tileset.PLAYER;
-    TETile nothing = Tileset.NOTHING;
-    TETile water = Tileset.WATER;
+    private TETile floor = Tileset.FLOOR;
+    private TETile wall = Tileset.WALL;
+    private TETile player = Tileset.PLAYER;
+    private TETile nothing = Tileset.NOTHING;
+    private TETile water = Tileset.WATER;
 
     public int getNumberOfPaints() {
         return numberOfPaints;
@@ -89,12 +90,12 @@ public class Parameters {
         this.numericWorld = numericWorld;
     }
 
-    public ArrayList<Partition> getFinalPartitions() {
-        return finalPartitions;
+    public ArrayList<Room> getFinalRooms() {
+        return finalRooms;
     }
 
-    public void setFinalPartitions(ArrayList<Partition> finalPartitions) {
-        this.finalPartitions = finalPartitions;
+    public void setFinalRooms(ArrayList<Room> finalRooms) {
+        this.finalRooms = finalRooms;
     }
 
     public TETile getFloor() {
