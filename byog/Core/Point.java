@@ -44,4 +44,13 @@ public class Point {
     public static boolean onHorizontalLine(Point p1, Point p2) {
         return (p1.getY() - p2.getY()) == 0;
     }
+
+    /** Method to check if a point lies in the given room floor */
+    public boolean liesInRoom(Room r) {
+        if ((this.getX() > r.getLeftCorner().getX()) && (this.getX() < r.getLeftCorner().getX() + r.getWidth())) {
+            if ((this.getY() > r.getLeftCorner().getY()) && (this.getY() < r.getLeftCorner().getY() + r.getHeight())) {
+                return true;
+            }
+        } return false;
+    }
 }

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4629a22-d0ae-4f73-ba67-d861f0207527" name="Default Changelist" comment="">
+    <list default="true" id="b4629a22-d0ae-4f73-ba67-d861f0207527" name="Default Changelist" comment="Merge branch 'dev'">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Hallway.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Hallway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byog/Core/Partition.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Partition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byog/Core/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/byog/Core/TestPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/TestPlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Hallway.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Hallway.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Partition.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Partition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Point.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/TestPlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/TestPlay.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
