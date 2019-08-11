@@ -136,6 +136,10 @@ public class Partition {
 
         Room newRoom = new Room(roomWidth, roomHeight, new Point(xCoordinate, yCoordinate));
 
-        return newRoom;
+        if (this.getCentre().liesInRoom(newRoom)) {
+            return newRoom;
+        } else {
+            return this.createRoom();
+        }
     }
 }
