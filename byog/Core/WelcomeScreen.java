@@ -26,6 +26,13 @@ public class WelcomeScreen {
         StdDraw.text(getBaseParameters().getBaseWorld().getCentre().getX(),
                 getBaseParameters().getBaseWorld().getCentre().getY(),
                 "N for New Game");
+        StdDraw.text(getBaseParameters().getBaseWorld().getCentre().getX(),
+                getBaseParameters().getBaseWorld().getCentre().getY() - 2,
+                "L to Load Game");
+        StdDraw.text(getBaseParameters().getBaseWorld().getCentre().getX(),
+                getBaseParameters().getBaseWorld().getCentre().getY() - 4,
+                "Q to Quit Game");
+
         StdDraw.show();
     }
 }
