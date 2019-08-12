@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4629a22-d0ae-4f73-ba67-d861f0207527" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/byog/Core/MemoryGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byog/Core/MemoryGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/MemoryGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byog/Core/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byog/Core/TestPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/TestPlay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/MemoryGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/MemoryGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/TestPlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/TestPlay.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +84,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MemoryGame">
+  <component name="RunManager" selected="Application.TestPlay">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -152,8 +156,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MemoryGame" />
         <item itemvalue="Application.TestPlay" />
+        <item itemvalue="Application.MemoryGame" />
         <item itemvalue="Application.MemoryGame" />
       </list>
     </recent_temporary>

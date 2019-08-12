@@ -7,7 +7,7 @@ import static byog.Core.Parameters.getBaseParameters;
 
 public class TestPlay {
     public static void main(String[] args) {
-        long currentSeed = 978464;
+        long currentSeed = 123456;
         getBaseParameters().getTileRenderer().initialize(getBaseParameters().getBaseWorld().getWidth(),
                                                                 getBaseParameters().getBaseWorld().getHeight());
         getBaseParameters().setRandomGenerator(new Random(currentSeed));

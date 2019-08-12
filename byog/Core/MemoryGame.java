@@ -90,6 +90,7 @@ public class MemoryGame {
         }
     }
 
+
     public String solicitNCharsInput(int n) {
         String input = "";
         drawFrame(input);

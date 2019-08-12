@@ -47,8 +47,10 @@ public class Point {
 
     /** Method to check if a point lies in the given room floor */
     public boolean liesInRoom(Room r) {
-        if ((this.getX() > r.getLeftCorner().getX()) && (this.getX() < r.getLeftCorner().getX() + r.getWidth())) {
-            if ((this.getY() > r.getLeftCorner().getY()) && (this.getY() < r.getLeftCorner().getY() + r.getHeight())) {
+        if ((this.getX() > r.getLeftCorner().getX() + 1 &&
+                (this.getX() < (r.getLeftCorner().getX() - 1) + r.getWidth()))) {
+            if ((this.getY() > r.getLeftCorner().getY() + 1) &&
+                    (this.getY() < (r.getLeftCorner().getY() - 1) + r.getHeight())) {
                 return true;
             }
         } return false;
