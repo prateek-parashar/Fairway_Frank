@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b4629a22-d0ae-4f73-ba67-d861f0207527" name="Default Changelist" comment="Merge branch 'dev'">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Partition.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Partition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/TestPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/TestPlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Partition.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Partition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/TestPlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/TestPlay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byog/lab6/MemoryGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/lab6/MemoryGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/lab6/MemoryGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/lab6/MemoryGame.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,6 +89,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MemoryGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="byog.lab6.MemoryGame" />
+      <module name="Frank_the_Possum" />
+      <option name="PROGRAM_PARAMETERS" value="12345" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="byog.lab6.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemoryGameSolution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="byog.lab6.MemoryGameSolution" />
+      <module name="Frank_the_Possum" />
+      <option name="PROGRAM_PARAMETERS" value="12345" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="byog.lab6.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RandomWorldDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="byog.lab5.RandomWorldDemo" />
       <module name="Frank_the_Possum" />
@@ -155,14 +180,16 @@
       <item itemvalue="Application.BoringWorldDemo" />
       <item itemvalue="Application.RandomWorldDemo" />
       <item itemvalue="Application.TestPlay" />
+      <item itemvalue="Application.MemoryGameSolution" />
+      <item itemvalue="Application.MemoryGame" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.TestPlay" />
+        <item itemvalue="Application.MemoryGame" />
+        <item itemvalue="Application.MemoryGameSolution" />
         <item itemvalue="Application.RandomWorldDemo" />
         <item itemvalue="Application.BoringWorldDemo" />
-        <item itemvalue="Application.TestPlay" />
-        <item itemvalue="Application.RandomWorldDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -182,6 +209,7 @@
       <workItem from="1565197361100" duration="2688000" />
       <workItem from="1565246104078" duration="9273000" />
       <workItem from="1565462208895" duration="1144000" />
+      <workItem from="1565548610099" duration="11381000" />
     </task>
     <task id="LOCAL-00001" summary="added the initial files and libraries">
       <created>1537531445516</created>
