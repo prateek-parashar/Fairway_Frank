@@ -3,7 +3,9 @@ package byog.Core;
 import byog.TileEngine.TERenderer;
 import byog.TileEngine.TETile;
 import byog.TileEngine.Tileset;
+import edu.princeton.cs.introcs.StdDraw;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -30,6 +32,8 @@ public class Parameters {
     private TETile player = Tileset.PLAYER;
     private TETile nothing = Tileset.NOTHING;
     private TETile water = Tileset.WATER;
+
+    private WelcomeScreen welcomeScreen = new WelcomeScreen();
 
     public int getNumberOfPaints() {
         return numberOfPaints;
@@ -161,6 +165,14 @@ public class Parameters {
 
     public void setFinalHallways(ArrayList<Hallway> finalHallways) {
         this.finalHallways = finalHallways;
+    }
+
+    public WelcomeScreen getWelcomeScreen() {
+        return welcomeScreen;
+    }
+
+    public void setWelcomeScreen(WelcomeScreen welcomeScreen) {
+        this.welcomeScreen = welcomeScreen;
     }
 
     public void initializeWorld() {
