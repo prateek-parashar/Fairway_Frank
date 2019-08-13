@@ -27,12 +27,20 @@ public class WelcomeScreen {
                 getBaseParameters().getBaseWorld().getCentre().getY(),
                 "N for New Game");
         StdDraw.text(getBaseParameters().getBaseWorld().getCentre().getX(),
-                getBaseParameters().getBaseWorld().getCentre().getY() - 2,
-                "L to Load Game");
-        StdDraw.text(getBaseParameters().getBaseWorld().getCentre().getX(),
                 getBaseParameters().getBaseWorld().getCentre().getY() - 4,
                 "Q to Quit Game");
-
         StdDraw.show();
+    }
+
+    public void playerInput() {
+        while (StdDraw.hasNextKeyTyped()) {
+            char input = Character.toUpperCase(StdDraw.nextKeyTyped());
+            System.out.println(input);
+            if (input == 'N') {
+                getBaseParameters().setNewGame(true);
+            } else if (input == 'Q') {
+                getBaseParameters().setQuitGame(true);
+            }
+        }
     }
 }

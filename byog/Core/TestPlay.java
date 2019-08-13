@@ -1,5 +1,8 @@
 package byog.Core;
 
+import edu.princeton.cs.introcs.StdDraw;
+
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -23,12 +26,18 @@ public class TestPlay {
         renderHallways(getBaseParameters().getFinalHallways());
         renderRooms(getBaseParameters().getFinalRooms());
         fillHallways(getBaseParameters().getFinalHallways());
+        getBaseParameters().getWelcomeScreen().initialiseWelcomeScreen();
 
-//        getBaseParameters().getWelcomeScreen().initialiseWelcomeScreen();
 
-        while (true) {
-            getBaseParameters().getPlayer().enableMovement();
+        while (!getBaseParameters().isNewGame()) {
+            getBaseParameters().getWelcomeScreen().playerInput();
         }
+        System.out.println("sdlsadkfjfs");
+        StdDraw.clear(Color.BLACK);
+
+//        while (true) {
+//            getBaseParameters().getPlayer().enableMovement();
+//        }
 
 //        getBaseParameters().getTileRenderer().renderFrame(getBaseParameters().getWorld());
 
