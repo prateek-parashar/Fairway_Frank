@@ -28,8 +28,10 @@ public class TestPlay {
         fillHallways(getBaseParameters().getFinalHallways());
         getBaseParameters().getWelcomeScreen().drawWelcomeScreen();
 
+
         StdDraw.clear(Color.BLACK);
 
+        getBaseParameters().getWelcomeScreen().initializeGame();
 //        while (true) {
 //            getBaseParameters().getPlayer().enableMovement();
 //        }

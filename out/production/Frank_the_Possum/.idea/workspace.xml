@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4629a22-d0ae-4f73-ba67-d861f0207527" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/byog/Core/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/byog/Core/WelcomeScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Parameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Parameters.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/byog/Core/TestPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/TestPlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/TileEngine/TETile.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/TileEngine/TETile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Parameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Parameters.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/TestPlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/TestPlay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byog/Core/WelcomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/WelcomeScreen.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +155,7 @@
         <item itemvalue="Application.MemoryGame" />
         <item itemvalue="Application.TestPlay" />
         <item itemvalue="Application.MemoryGame" />
-        <item itemvalue="Application.MemoryGame" />
+        <item itemvalue="Application.TestPlay" />
       </list>
     </recent_temporary>
   </component>
