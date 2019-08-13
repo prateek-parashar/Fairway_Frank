@@ -7,6 +7,9 @@ import java.awt.*;
 import static byog.Core.Parameters.getBaseParameters;
 
 public class WelcomeScreen {
+
+    private boolean newGame;
+
     private Font bigFont = new Font("Monaco", Font.BOLD, 30);
     private Font mediumFont  = new Font("Monaco", Font.BOLD, 20);
     private Font smallFont = new Font("Monaco", Font.BOLD, 10);
@@ -15,7 +18,7 @@ public class WelcomeScreen {
 
     }
 
-    public void initialiseWelcomeScreen() {
+    public void drawWelcomeScreen() {
         StdDraw.clear(Color.BLACK);
         StdDraw.setPenColor(Color.white);
         StdDraw.setFont(this.bigFont);
@@ -26,9 +29,6 @@ public class WelcomeScreen {
         StdDraw.text(getBaseParameters().getBaseWorld().getCentre().getX(),
                 getBaseParameters().getBaseWorld().getCentre().getY(),
                 "N for New Game");
-        StdDraw.text(getBaseParameters().getBaseWorld().getCentre().getX(),
-                getBaseParameters().getBaseWorld().getCentre().getY() - 4,
-                "Q to Quit Game");
         StdDraw.show();
     }
 
@@ -37,9 +37,7 @@ public class WelcomeScreen {
             char input = Character.toUpperCase(StdDraw.nextKeyTyped());
             System.out.println(input);
             if (input == 'N') {
-                getBaseParameters().setNewGame(true);
-            } else if (input == 'Q') {
-                getBaseParameters().setQuitGame(true);
+                this.newGame = true;
             }
         }
     }

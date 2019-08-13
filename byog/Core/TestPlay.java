@@ -26,13 +26,8 @@ public class TestPlay {
         renderHallways(getBaseParameters().getFinalHallways());
         renderRooms(getBaseParameters().getFinalRooms());
         fillHallways(getBaseParameters().getFinalHallways());
-        getBaseParameters().getWelcomeScreen().initialiseWelcomeScreen();
+        getBaseParameters().getWelcomeScreen().drawWelcomeScreen();
 
-
-        while (!getBaseParameters().isNewGame()) {
-            getBaseParameters().getWelcomeScreen().playerInput();
-        }
-        System.out.println("sdlsadkfjfs");
         StdDraw.clear(Color.BLACK);
 
 //        while (true) {

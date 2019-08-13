@@ -18,8 +18,6 @@ public class Parameters {
     private TERenderer tileRenderer = new TERenderer();
     private TETile[][] world = new TETile[baseWorld.getWidth()][baseWorld.getHeight()];
 
-    private int[][] numericWorld = new int[baseWorld.getWidth()][baseWorld.getHeight()];
-
     private ArrayList<Partition> finalPartitions = new ArrayList<>();
     private ArrayList<Room> finalRooms = new ArrayList<>();
     private ArrayList<Hallway> finalHallways = new ArrayList<>();
@@ -34,25 +32,6 @@ public class Parameters {
     private WelcomeScreen welcomeScreen = new WelcomeScreen();
 
     private Player player = new Player(baseWorld.getCentre());
-
-    private boolean newGame = false;
-    private boolean quitGame = false;
-
-    public boolean isQuitGame() {
-        return quitGame;
-    }
-
-    public void setQuitGame(boolean quitGame) {
-        this.quitGame = quitGame;
-    }
-
-    public boolean isNewGame() {
-        return newGame;
-    }
-
-    public void setNewGame(boolean newGame) {
-        this.newGame = newGame;
-    }
 
     public int getNumberOfPaints() {
         return numberOfPaints;
@@ -211,22 +190,4 @@ public class Parameters {
         }
     }
 
-    public void initializeNumericWorld() {
-        for (int i = 0; i < getBaseWorld().getWidth(); i++) {
-            for (int j = 0; j < getBaseWorld().getHeight(); j++) {
-                getBaseParameters().numericWorld[i][j] = 0;
-
-            }
-
-        }
-    }
-
-    public void printNumericWorld() {
-        for (int i = 0; i < getBaseWorld().getWidth(); i++) {
-            for (int j = 0; j < getBaseWorld().getHeight(); j++) {
-                System.out.print(getBaseParameters().getNumericWorld()[i][j]);
-            }
-            System.out.println("");
-        }
-    }
 }
