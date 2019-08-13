@@ -85,14 +85,6 @@ public class Parameters {
         this.world = world;
     }
 
-    public int[][] getNumericWorld() {
-        return numericWorld;
-    }
-
-    public void setNumericWorld(int[][] numericWorld) {
-        this.numericWorld = numericWorld;
-    }
-
     public ArrayList<Room> getFinalRooms() {
         return finalRooms;
     }
