@@ -24,7 +24,12 @@ public class TestPlay {
         renderRooms(getBaseParameters().getFinalRooms());
         fillHallways(getBaseParameters().getFinalHallways());
 
-        getBaseParameters().getWelcomeScreen().initialiseWelcomeScreen();
+//        getBaseParameters().getWelcomeScreen().initialiseWelcomeScreen();
+
+        while (true) {
+            getBaseParameters().getPlayer().enableMovement();
+        }
+
 //        getBaseParameters().getTileRenderer().renderFrame(getBaseParameters().getWorld());
 
     }

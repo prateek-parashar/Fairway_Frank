@@ -55,4 +55,24 @@ public class Point {
             }
         } return false;
     }
+
+    public void updateUp() {
+        int newY = this.getY() + 1;
+        this.setY(newY);
+    }
+
+    public void updateDown() {
+        int newY = this.getY() - 1;
+        this.setY(newY);
+    }
+
+    public void updateLeft() {
+        int newX = this.getX() - 1;
+        this.setX(newX);
+    }
+
+    public void updateRight() {
+        int newX = this.getX() + 1;
+        this.setX(newX);
+    }
 }

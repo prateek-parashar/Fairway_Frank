@@ -3,9 +3,7 @@ package byog.Core;
 import byog.TileEngine.TERenderer;
 import byog.TileEngine.TETile;
 import byog.TileEngine.Tileset;
-import edu.princeton.cs.introcs.StdDraw;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -29,11 +27,13 @@ public class Parameters {
 
     private TETile floor = Tileset.FLOOR;
     private TETile wall = Tileset.WALL;
-    private TETile player = Tileset.PLAYER;
+    private TETile playerTile = Tileset.PLAYER;
     private TETile nothing = Tileset.NOTHING;
     private TETile water = Tileset.WATER;
 
     private WelcomeScreen welcomeScreen = new WelcomeScreen();
+
+    private Player player = new Player(baseWorld.getCentre());
 
     public int getNumberOfPaints() {
         return numberOfPaints;
@@ -119,12 +119,12 @@ public class Parameters {
         this.wall = wall;
     }
 
-    public TETile getPlayer() {
-        return player;
+    public TETile getPlayerTile() {
+        return playerTile;
     }
 
-    public void setPlayer(TETile player) {
-        this.player = player;
+    public void setPlayerTile(TETile playerTile) {
+        this.playerTile = playerTile;
     }
 
     public TETile getNothing() {
@@ -173,6 +173,14 @@ public class Parameters {
 
     public void setWelcomeScreen(WelcomeScreen welcomeScreen) {
         this.welcomeScreen = welcomeScreen;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
     public void initializeWorld() {
