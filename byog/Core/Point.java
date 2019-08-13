@@ -1,5 +1,7 @@
 package byog.Core;
 
+import static byog.Core.Parameters.getBaseParameters;
+
 public class Point {
     private int x;
     private int y;
@@ -56,6 +58,14 @@ public class Point {
         } return false;
     }
 
+    /** Method to check if the point lies on a wall */
+    public boolean liesOnWall() {
+        if (getBaseParameters().getWorld()[this.getX()][this.getY()] == getBaseParameters().getWall()) {
+            return true;
+        }
+        return false;
+    }
+
     public void updateUp() {
         int newY = this.getY() + 1;
         this.setY(newY);
@@ -74,5 +84,10 @@ public class Point {
     public void updateRight() {
         int newX = this.getX() + 1;
         this.setX(newX);
+    }
+
+    public void updateHere(Point p) {
+        this.setX(p.getX());
+        this.setY(p.getY());
     }
 }
