@@ -10,15 +10,15 @@ import java.util.Random;
 public class Parameters {
 
     private int numberOfPaints = 0;
+    static int WIDTH = 70;
+    static int HEIGHT = 40;
 
     private static final Parameters baseParameters = new Parameters();
-    private Partition baseWorld = new Partition(70, 40, new Point(0, 0));
+    private Partition baseWorld = new Partition(WIDTH, HEIGHT, new Point(0, 0));
     private static long SEED;
     private Random randomGenerator;
     private TERenderer tileRenderer = new TERenderer();
     private TETile[][] world = new TETile[baseWorld.getWidth()][baseWorld.getHeight()];
-
-    private int[][] numericWorld = new int[baseWorld.getWidth()][baseWorld.getHeight()];
 
     private ArrayList<Partition> finalPartitions = new ArrayList<>();
     private ArrayList<Room> finalRooms = new ArrayList<>();
@@ -85,14 +85,6 @@ public class Parameters {
 
     public void setWorld(TETile[][] world) {
         this.world = world;
-    }
-
-    public int[][] getNumericWorld() {
-        return numericWorld;
-    }
-
-    public void setNumericWorld(int[][] numericWorld) {
-        this.numericWorld = numericWorld;
     }
 
     public ArrayList<Room> getFinalRooms() {
@@ -192,22 +184,4 @@ public class Parameters {
         }
     }
 
-    public void initializeNumericWorld() {
-        for (int i = 0; i < getBaseWorld().getWidth(); i++) {
-            for (int j = 0; j < getBaseWorld().getHeight(); j++) {
-                getBaseParameters().numericWorld[i][j] = 0;
-
-            }
-
-        }
-    }
-
-    public void printNumericWorld() {
-        for (int i = 0; i < getBaseWorld().getWidth(); i++) {
-            for (int j = 0; j < getBaseWorld().getHeight(); j++) {
-                System.out.print(getBaseParameters().getNumericWorld()[i][j]);
-            }
-            System.out.println("");
-        }
-    }
 }
