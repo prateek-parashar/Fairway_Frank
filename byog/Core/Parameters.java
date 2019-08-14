@@ -35,7 +35,7 @@ public class Parameters {
 
     private Player player = new Player(baseWorld.getCentre());
 
-    private boolean beginGame;
+    private boolean beginGame = false;
 
     public boolean isBeginGame() {
         return beginGame;
