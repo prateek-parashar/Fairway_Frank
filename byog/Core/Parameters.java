@@ -15,7 +15,7 @@ public class Parameters {
 
     private static final Parameters baseParameters = new Parameters();
     private Partition baseWorld = new Partition(WIDTH, HEIGHT, new Point(0, 0));
-    private static long SEED;
+    private long SEED;
     private Random randomGenerator;
     private TERenderer tileRenderer = new TERenderer();
     private TETile[][] world = new TETile[baseWorld.getWidth()][baseWorld.getHeight()];
@@ -31,7 +31,7 @@ public class Parameters {
     private TETile nothing = Tileset.NOTHING;
     private TETile water = Tileset.WATER;
 
-    private WelcomeScreen welcomeScreen = new WelcomeScreen();
+    private startScreen startScreen = new startScreen();
 
     private Player player = new Player(baseWorld.getCentre());
 
@@ -55,12 +55,12 @@ public class Parameters {
         this.baseWorld = baseWorld;
     }
 
-    public static long getSEED() {
-        return SEED;
+    public long getSEED() {
+        return this.SEED;
     }
 
-    public static void setSEED(long SEED) {
-        Parameters.SEED = SEED;
+    public void setSEED(long SEED) {
+        this.SEED = SEED;
     }
 
     public Random getRandomGenerator() {
@@ -159,12 +159,12 @@ public class Parameters {
         this.finalHallways = finalHallways;
     }
 
-    public WelcomeScreen getWelcomeScreen() {
-        return welcomeScreen;
+    public startScreen getStartScreen() {
+        return startScreen;
     }
 
-    public void setWelcomeScreen(WelcomeScreen welcomeScreen) {
-        this.welcomeScreen = welcomeScreen;
+    public void setStartScreen(startScreen startScreen) {
+        this.startScreen = startScreen;
     }
 
     public Player getPlayer() {
