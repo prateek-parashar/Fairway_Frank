@@ -32,12 +32,9 @@ public class TestPlay {
         StdDraw.clear(Color.BLACK);
 
         getBaseParameters().getStartScreen().initializeGame();
-//        while (true) {
-//            getBaseParameters().getPlayer().enableMovement();
-//        }
-
-//        getBaseParameters().getTileRenderer().renderFrame(getBaseParameters().getWorld());
-
+        while (getBaseParameters().isBeginGame()) {
+            getBaseParameters().getPlayer().enableMovement();
+        }
     }
 
     public static BSPTree splitAndGrow(Partition r, int iterations) {

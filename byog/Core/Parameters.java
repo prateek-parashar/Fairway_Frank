@@ -35,6 +35,16 @@ public class Parameters {
 
     private Player player = new Player(baseWorld.getCentre());
 
+    private boolean beginGame;
+
+    public boolean isBeginGame() {
+        return beginGame;
+    }
+
+    public void setBeginGame(boolean beginGame) {
+        this.beginGame = beginGame;
+    }
+
     public int getNumberOfPaints() {
         return numberOfPaints;
     }

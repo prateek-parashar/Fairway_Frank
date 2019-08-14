@@ -4,14 +4,16 @@ import edu.princeton.cs.introcs.StdDraw;
 
 import java.awt.*;
 
-import static byog.Core.Parameters.baseParameters;
 import static byog.Core.Parameters.getBaseParameters;
 
 public class startScreen {
 
     private boolean newGame;
-    private boolean beginGame;
     private boolean quitGame;
+
+    private char newGameCommand = 'N';
+    private char quitGameCommand = 'Q';
+    private char startGameCommand = 'S';
 
     Point centre = new Point(Parameters.WIDTH / 2, Parameters.HEIGHT / 2);
     private Font bigFont = new Font("Monaco", Font.BOLD, 35);
@@ -52,8 +54,11 @@ public class startScreen {
         while (StdDraw.hasNextKeyTyped()) {
             char input = Character.toUpperCase(StdDraw.nextKeyTyped());
             System.out.println(input);
-            if (input == 'N') {
+            if (input == newGameCommand) {
                 this.newGame = true;
+            } else if (input == quitGameCommand) {
+                this.quitGame = true;
+                System.exit(0);
             }
         }
     }
@@ -61,6 +66,15 @@ public class startScreen {
     public void write(String s, int xPos, int yPos) {
         StdDraw.text(xPos, yPos, s);
         StdDraw.show();
+    }
+
+    public static boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch(NumberFormatException e){
+            return false;
+        }
     }
 
     public long solicitSeedInput() {
@@ -72,8 +86,11 @@ public class startScreen {
                 continue;
             }
             char key = StdDraw.nextKeyTyped();
-            input += String.valueOf(key);
-            this.drawSeedInputScreen(input);
+
+            if (isNumeric(Character.toString(key))) {
+                input += String.valueOf(key);
+                this.drawSeedInputScreen(input);
+            }
         }
         StdDraw.pause(500);
         return Long.parseLong(input);
@@ -82,10 +99,11 @@ public class startScreen {
     
     public void initializeGame() {
 
-//        while (!this.newGame) {
-//            this.playerInput();
-//        }
+        while (!this.newGame && !quitGame) {
+            this.playerInput();
+        }
         long typedSeed = this.solicitSeedInput();
         getBaseParameters().setSEED(typedSeed);
+        getBaseParameters().setBeginGame(true);
     }
 }
