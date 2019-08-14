@@ -9,6 +9,7 @@ import static byog.Core.Parameters.getBaseParameters;
 public class startScreen {
 
     private boolean newGame;
+    private boolean quitGame;
 
     private char newGameCommand = 'N';
     private char quitGameCommand = 'Q';
@@ -56,7 +57,7 @@ public class startScreen {
             if (input == newGameCommand) {
                 this.newGame = true;
             } else if (input == quitGameCommand) {
-                getBaseParameters().setQuitGame(true);
+                this.quitGame = true;
                 System.exit(0);
             }
         }
@@ -98,10 +99,11 @@ public class startScreen {
     
     public void initializeGame() {
 
-        while (!this.newGame || !getBaseParameters().isQuitGame()) {
+        while (!this.newGame && !quitGame) {
             this.playerInput();
         }
         long typedSeed = this.solicitSeedInput();
         getBaseParameters().setSEED(typedSeed);
+        getBaseParameters().setBeginGame(true);
     }
 }
