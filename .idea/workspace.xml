@@ -11,6 +11,20 @@
   <component name="CoverageViewManager">
     <option name="myElementSize" value="190" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -173,6 +187,10 @@
       <workItem from="1565246104078" duration="9273000" />
       <workItem from="1565462208895" duration="1144000" />
       <workItem from="1565548610099" duration="11381000" />
+      <workItem from="1565785486715" duration="41000" />
+      <workItem from="1565785539604" duration="109000" />
+      <workItem from="1565785661487" duration="80000" />
+      <workItem from="1565798207691" duration="862000" />
     </task>
     <task id="LOCAL-00001" summary="added the initial files and libraries">
       <created>1537531445516</created>

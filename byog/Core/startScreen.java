@@ -36,7 +36,7 @@ public class startScreen {
         StdDraw.show();
     }
 
-    public void drawSeedInputScreen(String userInput) {
+    private void drawSeedInputScreen(String userInput) {
             StdDraw.clear(Color.BLACK);
             StdDraw.setPenColor(Color.yellow);
             StdDraw.setFont(this.mediumFont);
@@ -44,13 +44,14 @@ public class startScreen {
 
             StdDraw.setPenColor(Color.white);
             StdDraw.setFont(this.smallFont);
-            this.write("Use W, A, S, D to move the character", centre.getX(), centre.getY() - 8);
+        this.write("Press 'S' to start the game", centre.getX(), centre.getY() - 6);
+        this.write("Use W, A, S, D to move the character", centre.getX(), centre.getY() - 8);
 
             StdDraw.setPenColor(Color.yellow);
             this.write(userInput, centre.getX(), centre.getY());
     }
 
-    public void playerInput() {
+    private void playerInput() {
         while (StdDraw.hasNextKeyTyped()) {
             char input = Character.toUpperCase(StdDraw.nextKeyTyped());
             System.out.println(input);
@@ -59,16 +60,18 @@ public class startScreen {
             } else if (input == quitGameCommand) {
                 this.quitGame = true;
                 System.exit(0);
+            } else if ((input == startGameCommand) && this.newGame) {
+                getBaseParameters().setBeginGame(true);
             }
         }
     }
 
-    public void write(String s, int xPos, int yPos) {
+    private void write(String s, int xPos, int yPos) {
         StdDraw.text(xPos, yPos, s);
         StdDraw.show();
     }
 
-    public static boolean isNumeric(String str) {
+    private static boolean isNumeric(String str) {
         try {
             Double.parseDouble(str);
             return true;
@@ -77,7 +80,7 @@ public class startScreen {
         }
     }
 
-    public long solicitSeedInput() {
+    private long solicitSeedInput() {
         String input = "";
         this.drawSeedInputScreen(input);
 
@@ -92,10 +95,8 @@ public class startScreen {
                 this.drawSeedInputScreen(input);
             }
         }
-        StdDraw.pause(500);
         return Long.parseLong(input);
     }
-
     
     public void initializeGame() {
 
@@ -104,6 +105,8 @@ public class startScreen {
         }
         long typedSeed = this.solicitSeedInput();
         getBaseParameters().setSEED(typedSeed);
-        getBaseParameters().setBeginGame(true);
+        while (!getBaseParameters().isBeginGame()) {
+            this.playerInput();
+        }
     }
 }
