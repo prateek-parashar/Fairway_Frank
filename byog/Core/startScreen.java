@@ -57,6 +57,7 @@ public class startScreen {
                 this.newGame = true;
             } else if (input == quitGameCommand) {
                 getBaseParameters().setQuitGame(true);
+                System.exit(0);
             }
         }
     }
@@ -97,7 +98,7 @@ public class startScreen {
     
     public void initializeGame() {
 
-        while (!this.newGame) {
+        while (!this.newGame || !getBaseParameters().isQuitGame()) {
             this.playerInput();
         }
         long typedSeed = this.solicitSeedInput();
