@@ -12,9 +12,7 @@ public class Game {
      */
     public void playWithKeyboard() {
         getBaseParameters().getTileRenderer().initialize(Parameters.WIDTH, Parameters.HEIGHT);
-
         getBaseParameters().initializeWorld();
-
         getBaseParameters().getStartScreen().drawWelcomeScreen();
         getBaseParameters().getStartScreen().initializeGame();
 
@@ -23,13 +21,9 @@ public class Game {
         BSPTree partitionTree = splitAndGrow(getBaseParameters().getBaseWorld(), 5);
 
         partitionTree.generateRooms();
-
         partitionTree.generateHallways();
-
         partitionTree.renderHallways(getBaseParameters().getFinalHallways());
-
         partitionTree.renderRooms(getBaseParameters().getFinalRooms());
-
         partitionTree.fillHallways(getBaseParameters().getFinalHallways());
 
         while (getBaseParameters().isBeginGame()) {

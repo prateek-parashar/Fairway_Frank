@@ -2,6 +2,7 @@ package byog.Core;
 
 import static byog.Core.Parameters.getBaseParameters;
 
+/** This class is used to represent a single point in the cartesian plane with it's e and y co-ordinates */
 public class Point {
     private int x;
     private int y;
@@ -66,6 +67,9 @@ public class Point {
         return false;
     }
 
+    /** The corresponding methods are used in the Player class to help in the movement of the player icon.
+     * The update[direction] methods are used to change the corresponding X or Y coordinate of the current point.
+     */
     public void updateUp() {
         int newY = this.getY() + 1;
         this.setY(newY);
