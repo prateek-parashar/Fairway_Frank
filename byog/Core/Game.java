@@ -11,8 +11,7 @@ public class Game {
      * Method used for playing a fresh game. The game should start from the main menu.
      */
     public void playWithKeyboard() {
-        getBaseParameters().getTileRenderer().initialize(getBaseParameters().getBaseWorld().getWidth(),
-                getBaseParameters().getBaseWorld().getHeight());
+        getBaseParameters().getTileRenderer().initialize(Parameters.WIDTH, Parameters.HEIGHT);
 
         getBaseParameters().initializeWorld();
 
