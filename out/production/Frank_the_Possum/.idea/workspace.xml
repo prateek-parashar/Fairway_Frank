@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b4629a22-d0ae-4f73-ba67-d861f0207527" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byog/Core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byog/Core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byog/Core/MemoryGame.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Frank_the_Possum/byog/Core/MemoryGame.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -193,6 +199,8 @@
       <workItem from="1565785486715" duration="41000" />
       <workItem from="1565785539604" duration="109000" />
       <workItem from="1565785661487" duration="80000" />
+      <workItem from="1565798207691" duration="2567000" />
+      <workItem from="1565860198501" duration="1185000" />
     </task>
     <task id="LOCAL-00001" summary="added the initial files and libraries">
       <created>1537531445516</created>
