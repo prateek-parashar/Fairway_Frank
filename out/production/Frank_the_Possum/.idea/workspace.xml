@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4629a22-d0ae-4f73-ba67-d861f0207527" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/BSPTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/BSPTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Hallway.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Hallway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Partition.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Partition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/byog/Core/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/byog/Core/Room.java" afterDir="false" />
-    </list>
+    <list default="true" id="b4629a22-d0ae-4f73-ba67-d861f0207527" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
