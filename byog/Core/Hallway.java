@@ -26,26 +26,6 @@ public class Hallway {
         return start;
     }
 
-    public void setStart(Point start) {
-        this.start = start;
-    }
-
-    public Point getEnd() {
-        return end;
-    }
-
-    public void setEnd(Point end) {
-        this.end = end;
-    }
-
-    public int getLength() {
-        return length;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
-    }
-
     @Override
     public String toString() {
         return "Hallway{" +
@@ -55,6 +35,9 @@ public class Hallway {
                 '}';
     }
 
+    /** Checks to see if the 2 given points are on a vertical or horizontal line and then
+     * correspondingly draws the wall tiles with a single tile width
+     */
     public void drawHallway() {
         if (Point.onHorizontalLine(this.start, this.end)) {
             this.drawHorizontalHallway();
@@ -63,6 +46,9 @@ public class Hallway {
         }
     }
 
+    /** Checks to see if the 2 given points are on a vertical or horizontal line and then
+     * correspondingly fills the wall boundaries with floor tiles
+     */
     public void fillHallway() {
         if (Point.onHorizontalLine(this.start, this.end)) {
             this.fillHorizontalHallway();

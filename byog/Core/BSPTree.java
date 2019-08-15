@@ -1,8 +1,14 @@
 package byog.Core;
 
+import java.util.ArrayList;
+
 import static byog.Core.Parameters.getBaseParameters;
 
-
+/** This class is used as a data structure to allow recursive solution to the problems at hand.
+ * Usage of this data structure ensures that we do not end up with overlapping rooms
+ *
+ * @Source --> https://eskerda.com/bsp-dungeon-generation/
+ * */
 public class BSPTree {
     private Partition root;
     private BSPTree leftChild = null;
@@ -32,10 +38,6 @@ public class BSPTree {
 
     public Partition getRoot() {
         return root;
-    }
-
-    public void setRoot(Partition root) {
-        this.root = root;
     }
 
     public BSPTree getLeftChild() {
@@ -102,4 +104,25 @@ public class BSPTree {
            this.rightChild.generateHallways();
        }
    }
+
+   /** Draws the rooms on the TETile[][] world paramter */
+    public void renderRooms(ArrayList<Room> roomList) {
+        for (Room r : roomList) {
+            r.drawRoom();
+        }
+    }
+
+    /** Draws the walls of the hallways between the centre points of 2 sister partitions of the tree */
+    public void renderHallways(ArrayList<Hallway> hallwayList) {
+        for (Hallway h : hallwayList) {
+            h.drawHallway();
+        }
+    }
+
+    /** Fill the drawn hallways with floor tiles */
+    public void fillHallways(ArrayList<Hallway> hallwayList) {
+        for (Hallway h : hallwayList) {
+            h.fillHallway();
+        }
+    }
 }

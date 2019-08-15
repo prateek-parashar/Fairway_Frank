@@ -2,6 +2,11 @@ package byog.Core;
 
 import static byog.Core.Parameters.getBaseParameters;
 
+/** This class acts as the leafnodes of the BSPTree class.
+ * It contains methods to randomly draw rooms and hallways within it to generate the world.
+ *
+ * @Source --> https://eskerda.com/bsp-dungeon-generation/
+ */
 public class Partition {
     private int width;
     private int height;
@@ -24,32 +29,16 @@ public class Partition {
         return width;
     }
 
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
     public int getHeight() {
         return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
     }
 
     public Point getLeftCorner() {
         return leftCorner;
     }
 
-    public void setLeftCorner(Point leftCorner) {
-        this.leftCorner = leftCorner;
-    }
-
     public Point getCentre() {
         return centre;
-    }
-
-    public void setCentre(Point centre) {
-        this.centre = centre;
     }
 
     @Override
@@ -126,9 +115,9 @@ public class Partition {
 
     public Room createRoom() {
         int roomWidth = Parameters.MIN_ROOM_SIZE + getBaseParameters().getRandomGenerator().
-                                                                nextInt(this.width - 5);
+                                                                nextInt(this.width - 4);
         int roomHeight = Parameters.MIN_ROOM_SIZE + getBaseParameters().getRandomGenerator().
-                                                                nextInt(this.height - 5);
+                                                                nextInt(this.height - 4);
         int xCoordinate = this.getLeftCorner().getX() + getBaseParameters().getRandomGenerator()
                                                                 .nextInt(this.width - roomWidth);
         int yCoordinate = this.getLeftCorner().getY() + getBaseParameters().getRandomGenerator()

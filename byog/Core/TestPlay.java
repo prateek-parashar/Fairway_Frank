@@ -10,11 +10,13 @@ import static byog.Core.Parameters.getBaseParameters;
 
 public class TestPlay {
     public static void main(String[] args) {
-        long currentSeed = 123456;
         getBaseParameters().getTileRenderer().initialize(getBaseParameters().getBaseWorld().getWidth(),
-                                                                getBaseParameters().getBaseWorld().getHeight());
-        getBaseParameters().setRandomGenerator(new Random(currentSeed));
+                getBaseParameters().getBaseWorld().getHeight());
+        getBaseParameters().getStartScreen().drawWelcomeScreen();
+        getBaseParameters().getStartScreen().initializeGame();
         getBaseParameters().initializeWorld();
+
+        getBaseParameters().setRandomGenerator(new Random(getBaseParameters().getSEED()));
 
         BSPTree gameTree = splitAndGrow(getBaseParameters().getBaseWorld(), 5);
 
@@ -26,12 +28,10 @@ public class TestPlay {
         renderHallways(getBaseParameters().getFinalHallways());
         renderRooms(getBaseParameters().getFinalRooms());
         fillHallways(getBaseParameters().getFinalHallways());
-        getBaseParameters().getStartScreen().drawWelcomeScreen();
 
 
         StdDraw.clear(Color.BLACK);
 
-        getBaseParameters().getStartScreen().initializeGame();
         while (getBaseParameters().isBeginGame()) {
             getBaseParameters().getPlayer().enableMovement();
         }

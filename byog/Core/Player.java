@@ -1,13 +1,14 @@
 package byog.Core;
 
-import byog.TileEngine.TETile;
-import byog.TileEngine.Tileset;
 import edu.princeton.cs.introcs.StdDraw;
 
 import java.awt.*;
 
 import static byog.Core.Parameters.getBaseParameters;
 
+/** This class is used to manage and control the Player (i.e. character icon played by the user)
+ * It listens for user input and then makes the player icon behave in the desired fashion
+ */
 public class Player {
     private Point currentPosition;
     private Point previousPosition;
@@ -16,6 +17,10 @@ public class Player {
     private Point leftPosition;
     private Point rightPosition;
 
+    /** Initialising the object, we make sure to track the player's current position, the
+     * precious position and all its neighbouring co-ordinates
+     * @param startPosition
+     */
     public Player(Point startPosition) {
         this.currentPosition = startPosition;
         this.previousPosition = new Point(startPosition.getX(), startPosition.getY());
@@ -26,9 +31,12 @@ public class Player {
 
     }
 
-
+    /** The following methods are to enable movement of the player.
+     * The directed direction's co-ordinates are checked to see if the movement is allowed.
+     * If yes, the all the neighbouring co-ordinates are updated after every move and the current position is
+     * saved in the previous position field.
+     */
     public void moveUp() {
-
         if (this.upPosition.liesOnWall()) {
             return;
         } else {
@@ -80,6 +88,9 @@ public class Player {
         }
     }
 
+    /** This method draws the player.
+     * Make sure that the `StdDraw.enableDoubleBuffering()` method is called for smoother transitions.
+     */
     public void drawPlayer() {
         StdDraw.clear(Color.BLACK);
         getBaseParameters().getWorld()[this.previousPosition.getX()][this.previousPosition.getY()]
@@ -89,6 +100,7 @@ public class Player {
         getBaseParameters().getTileRenderer().renderFrame(getBaseParameters().getWorld());
     }
 
+    /** Takes the user input and moves the character towards that direction */
     public void enableMovement() {
         StdDraw.enableDoubleBuffering();
         this.drawPlayer();
