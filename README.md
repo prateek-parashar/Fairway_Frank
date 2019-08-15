@@ -21,6 +21,9 @@ Upon installation, clone the repositiory and build the project from the `Main` c
 On successful build, you shoud be greeted with a welcome screen on the welcome screen.
 
 Upon entering the Seed, you should see a randonly generated dungeon and a player icon to move around and explore.
+
+
+
 ![Sample Shot](https://github.com/prateek-parashar/Fairway_Frank/blob/master/sampleshots/sample_from_game.png)
 
 
@@ -30,5 +33,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-*This project is an implementation of the project BYOG by Prof Josh Hug from UCLA.
-*Shout out to the awesome community of Rogue-Like devs (The rogouelike dev sub and discord) who guided me to resources and blogs.
+* This project is an implementation of the project BYOG by Prof Josh Hug from UCLA.
+
+* Shout out to the awesome community of Rogue-Like devs (The rogouelike dev sub and discord) who guided me to resources and blogs.
