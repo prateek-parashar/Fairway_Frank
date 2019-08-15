@@ -126,9 +126,9 @@ public class Partition {
 
     public Room createRoom() {
         int roomWidth = Parameters.MIN_ROOM_SIZE + getBaseParameters().getRandomGenerator().
-                                                                nextInt(this.width - 5);
+                                                                nextInt(this.width - 4);
         int roomHeight = Parameters.MIN_ROOM_SIZE + getBaseParameters().getRandomGenerator().
-                                                                nextInt(this.height - 5);
+                                                                nextInt(this.height - 4);
         int xCoordinate = this.getLeftCorner().getX() + getBaseParameters().getRandomGenerator()
                                                                 .nextInt(this.width - roomWidth);
         int yCoordinate = this.getLeftCorner().getY() + getBaseParameters().getRandomGenerator()

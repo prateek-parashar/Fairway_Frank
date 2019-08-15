@@ -1,5 +1,7 @@
 package byog.Core;
 
+import java.util.ArrayList;
+
 import static byog.Core.Parameters.getBaseParameters;
 
 
@@ -102,4 +104,22 @@ public class BSPTree {
            this.rightChild.generateHallways();
        }
    }
+
+    public void renderRooms(ArrayList<Room> roomList) {
+        for (Room r : roomList) {
+            r.drawRoom();
+        }
+    }
+
+    public void renderHallways(ArrayList<Hallway> hallwayList) {
+        for (Hallway h : hallwayList) {
+            h.drawHallway();
+        }
+    }
+
+    public void fillHallways(ArrayList<Hallway> hallwayList) {
+        for (Hallway h : hallwayList) {
+            h.fillHallway();
+        }
+    }
 }
