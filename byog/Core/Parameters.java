@@ -7,12 +7,20 @@ import byog.TileEngine.Tileset;
 import java.util.ArrayList;
 import java.util.Random;
 
+/** This is a singleton class and hence the private constructor and one static instance created within
+ * the class.
+ * This class contains the parameters which are shared between other various classes particularly the
+ * variable `world` of type TETile[][] which needs to be accessed to draw the various objects in the game
+ * ALl the variables are accessible only via getters and setters.
+ */
+
 public class Parameters {
 
     static int WIDTH = 70;
     static int HEIGHT = 40;
 
     private static final Parameters baseParameters = new Parameters();
+
     private Partition baseWorld = new Partition(WIDTH, HEIGHT, new Point(0, 0));
     private long SEED;
     private Random randomGenerator;
@@ -34,6 +42,10 @@ public class Parameters {
     private Player player = new Player(baseWorld.getCentre());
 
     private boolean beginGame = false;
+
+    private Parameters() {
+
+    }
 
     public boolean isBeginGame() {
         return beginGame;
@@ -107,6 +119,10 @@ public class Parameters {
         return player;
     }
 
+    /** This method is used to fill the TETile[][] array with the `Nothing` tile
+     * this lays the first layer of the game world on the screen and
+     * also ensures that the Tile Renderer does not meet an unexpected null value
+     */
     public void initializeWorld() {
         for (int i = 0; i < getBaseWorld().getWidth() ; i++) {
             for (int j = 0; j < getBaseWorld().getHeight(); j++) {
