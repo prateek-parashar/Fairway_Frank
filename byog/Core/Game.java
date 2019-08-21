@@ -3,7 +3,6 @@ package byog.Core;
 import java.util.Random;
 
 import static byog.Core.Parameters.getBaseParameters;
-import static byog.Core.TestPlay.splitAndGrow;
 
 
 public class Game {
@@ -18,7 +17,7 @@ public class Game {
 
         getBaseParameters().setRandomGenerator(new Random(getBaseParameters().getSEED()));
 
-        BSPTree partitionTree = splitAndGrow(getBaseParameters().getBaseWorld(), 5);
+        BSPTree partitionTree = BSPTree.splitAndGrow(getBaseParameters().getBaseWorld(), 5);
 
         partitionTree.generateRooms();
         partitionTree.generateHallways();

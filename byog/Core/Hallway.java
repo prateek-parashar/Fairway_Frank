@@ -35,7 +35,8 @@ public class Hallway {
                 '}';
     }
 
-    /** Checks to see if the 2 given points are on a vertical or horizontal line and then
+    /**
+     * Checks to see if the 2 given points are on a vertical or horizontal line and then
      * correspondingly draws the wall tiles with a single tile width
      */
     public void drawHallway() {
@@ -46,7 +47,8 @@ public class Hallway {
         }
     }
 
-    /** Checks to see if the 2 given points are on a vertical or horizontal line and then
+    /**
+     * Checks to see if the 2 given points are on a vertical or horizontal line and then
      * correspondingly fills the wall boundaries with floor tiles
      */
     public void fillHallway() {
@@ -58,11 +60,11 @@ public class Hallway {
     }
 
     private void drawHorizontalHallway() {
-        for (int x = start.getX() ; x < end.getX(); x++) {
+        for (int x = start.getX(); x < end.getX(); x++) {
             getBaseParameters().getWorld()[x][this.getStart().getY() + 1] = getBaseParameters().getWall();
         }
 
-        for (int x = start.getX() ; x < end.getX(); x++) {
+        for (int x = start.getX(); x < end.getX(); x++) {
             getBaseParameters().getWorld()[x][this.getStart().getY() - 1] = getBaseParameters().getWall();
         }
     }

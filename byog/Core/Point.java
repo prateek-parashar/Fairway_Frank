@@ -2,12 +2,14 @@ package byog.Core;
 
 import static byog.Core.Parameters.getBaseParameters;
 
-/** This class is used to represent a single point in the cartesian plane with it's e and y co-ordinates */
+/**
+ * This class is used to represent a single point in the cartesian plane with it's e and y co-ordinates
+ */
 public class Point {
     private int x;
     private int y;
 
-    public Point (int x, int y) {
+    public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -36,38 +38,43 @@ public class Point {
                 '}';
     }
 
-    /** Returns true if 2 point lie in a vertical line */
+    /**
+     * Returns true if 2 point lie in a vertical line
+     */
 
     public static boolean onVerticalLine(Point p1, Point p2) {
         return (p1.getX() - p2.getX()) == 0;
     }
 
-    /** Returns true if 2 point lie in a horizontal line */
+    /**
+     * Returns true if 2 point lie in a horizontal line
+     */
 
     public static boolean onHorizontalLine(Point p1, Point p2) {
         return (p1.getY() - p2.getY()) == 0;
     }
 
-    /** Method to check if a point lies in the given room floor */
+    /**
+     * Method to check if a point lies in the given room floor
+     */
     public boolean liesInRoom(Room r) {
         if ((this.getX() > r.getLeftCorner().getX() + 1 &&
                 (this.getX() < (r.getLeftCorner().getX() - 1) + r.getWidth()))) {
-            if ((this.getY() > r.getLeftCorner().getY() + 1) &&
-                    (this.getY() < (r.getLeftCorner().getY() - 1) + r.getHeight())) {
-                return true;
-            }
-        } return false;
-    }
-
-    /** Method to check if the point lies on a wall */
-    public boolean liesOnWall() {
-        if (getBaseParameters().getWorld()[this.getX()][this.getY()] == getBaseParameters().getWall()) {
-            return true;
+            return (this.getY() > r.getLeftCorner().getY() + 1) &&
+                    (this.getY() < (r.getLeftCorner().getY() - 1) + r.getHeight());
         }
         return false;
     }
 
-    /** The corresponding methods are used in the Player class to help in the movement of the player icon.
+    /**
+     * Method to check if the point lies on a wall
+     */
+    public boolean liesOnWall() {
+        return getBaseParameters().getWorld()[this.getX()][this.getY()] == getBaseParameters().getWall();
+    }
+
+    /**
+     * The corresponding methods are used in the Player class to help in the movement of the player icon.
      * The update[direction] methods are used to change the corresponding X or Y coordinate of the current point.
      */
     public void updateUp() {

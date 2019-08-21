@@ -6,6 +6,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 
+import static byog.Core.BSPTree.splitAndGrow;
 import static byog.Core.Parameters.getBaseParameters;
 
 public class TestPlay {
@@ -35,18 +36,6 @@ public class TestPlay {
         while (getBaseParameters().isBeginGame()) {
             getBaseParameters().getPlayer().enableMovement();
         }
-    }
-
-    public static BSPTree splitAndGrow(Partition r, int iterations) {
-        BSPTree baseTree = new BSPTree(r);
-
-        if(iterations > 0) {
-            int toss = iterations % 2;
-            Partition[] childPartitions = baseTree.randomSplitAndGrow(toss);
-            baseTree.addLeftChild(splitAndGrow(childPartitions[0], iterations - 1));
-            baseTree.addRightChild(splitAndGrow(childPartitions[1], iterations - 1));
-        }
-        return baseTree;
     }
 
     public static void printPartitions(ArrayList<Partition> partitionList) {

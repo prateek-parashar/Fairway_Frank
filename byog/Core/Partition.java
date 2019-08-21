@@ -2,7 +2,8 @@ package byog.Core;
 
 import static byog.Core.Parameters.getBaseParameters;
 
-/** This class acts as the leafnodes of the BSPTree class.
+/**
+ * This class acts as the leafnodes of the BSPTree class.
  * It contains methods to randomly draw rooms and hallways within it to generate the world.
  *
  * @Source --> https://eskerda.com/bsp-dungeon-generation/
@@ -22,7 +23,7 @@ public class Partition {
         this.height = height;
         this.leftCorner = leftCorner;
         this.centre = new Point(this.width / 2 + this.getLeftCorner().getX(),
-                                this.height / 2 + this.getLeftCorner().getY());
+                this.height / 2 + this.getLeftCorner().getY());
     }
 
     public int getWidth() {
@@ -51,7 +52,9 @@ public class Partition {
                 '}';
     }
 
-    /** Splits the given partition vertically with a random chosen point in the x axis
+    /**
+     * Splits the given partition vertically with a random chosen point in the x axis
+     *
      * @return - list of the 2 new Partition objects
      */
     public Partition[] verticalSplit() {
@@ -61,7 +64,7 @@ public class Partition {
 
         double ratio = (double) breakPoint / this.getWidth();
 
-        if((ratio < 0.40) || (ratio > 0.60)) {
+        if ((ratio < 0.40) || (ratio > 0.60)) {
             return this.verticalSplit();
         } else {
             Point leftCorner1 = basePartition.getLeftCorner();
@@ -81,7 +84,9 @@ public class Partition {
 
     }
 
-    /** Splits the given partition horizontally with a random chosen point in the y axis
+    /**
+     * Splits the given partition horizontally with a random chosen point in the y axis
+     *
      * @return - list of the 2 new Partition objects
      */
     public Partition[] horizontalSplit() {
@@ -91,7 +96,7 @@ public class Partition {
 
         double ratio = (double) breakPoint / this.getHeight();
 
-        if((ratio < 0.40) || (ratio > 0.60)) {
+        if ((ratio < 0.40) || (ratio > 0.60)) {
             return this.horizontalSplit();
         } else {
 
@@ -111,17 +116,19 @@ public class Partition {
         }
     }
 
-    /** Create a room of minimum size in the given partition at random location within the defined parameter */
+    /**
+     * Create a room of minimum size in the given partition at random location within the defined parameter
+     */
 
     public Room createRoom() {
         int roomWidth = Parameters.MIN_ROOM_SIZE + getBaseParameters().getRandomGenerator().
-                                                                nextInt(this.width - 4);
+                nextInt(this.width - 4);
         int roomHeight = Parameters.MIN_ROOM_SIZE + getBaseParameters().getRandomGenerator().
-                                                                nextInt(this.height - 4);
+                nextInt(this.height - 4);
         int xCoordinate = this.getLeftCorner().getX() + getBaseParameters().getRandomGenerator()
-                                                                .nextInt(this.width - roomWidth);
+                .nextInt(this.width - roomWidth);
         int yCoordinate = this.getLeftCorner().getY() + getBaseParameters().getRandomGenerator()
-                                                                .nextInt(this.height - roomHeight);
+                .nextInt(this.height - roomHeight);
 
         Room newRoom = new Room(roomWidth, roomHeight, new Point(xCoordinate, yCoordinate));
 
